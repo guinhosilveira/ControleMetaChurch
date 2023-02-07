@@ -1,0 +1,155 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+}
+
+section.formul{
+    margin: 2% auto;
+    width: 70%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.form label.juntos{
+    font-size: 20pt;
+    color: aliceblue;
+    width: 100%;
+}
+
+.form label.juntos input{
+    width: 100%;
+    
+    padding: 1.5% 0 1.5% 1%;
+    margin: 1% 0 2% 0.5%;
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+div.fones {
+    width: 102%;
+}
+
+form label.juntos input#fone1{
+    width: 8%;
+}
+
+form label.juntos input#fone2{
+    width: 87%;
+    margin-left: 1%;
+}
+
+.form div.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2%;
+}
+
+.form div.buttons button{
+    height: 4rem;
+    width: 22%;
+
+    margin: 0% 3%;
+    border-radius: 5px;
+
+    font-size: 14pt;
+    color: aliceblue;
+
+    background-color: rgb(40, 38, 38);
+}
+
+.form div.buttons button:hover{
+    height: 4rem;
+    width: 22%;
+
+    margin: 0% 3%;
+    border-radius: 5px;
+
+    font-size: 14pt;
+    color: aliceblue;
+
+    background-color: rgb(25, 24, 24);
+    
+    cursor: pointer;
+}
+
+footer{
+    bottom: 0; 
+    position: fixed; 
+    display: flex;
+
+    height: 12vh;
+    width: 100%;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: #CECECE;
+}
+
+footer div.infos{
+    font-size: 12pt;
+    color: rgb(44, 44, 45);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer div.infos a{
+    color: rgb(44, 44, 45);
+    text-decoration: none;
+}
+
+footer div.infos a:hover{
+    color: rgb(68, 68, 68);
+    text-decoration: underline;
+}

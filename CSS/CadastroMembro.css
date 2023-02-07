@@ -1,0 +1,188 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+
+    color: aliceblue;
+
+    display: flex;
+    align-items: center;
+}
+
+section{
+    width: 100%;
+    padding: 0 5%;
+    margin: 2% 0;
+}
+
+h1 {
+    font-size: 25pt;
+
+    animation: fromLeft 1.2s backwards;
+    animation-delay: .1s;
+}
+
+form{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;    
+}
+
+form label.juntos{
+    font-size: 20px;
+    color: aliceblue;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: fromLeft .8s backwards;
+    animation-delay: .1s;
+}
+
+form label.juntos input{
+    width: 70%;
+    
+    padding: 1.4% 1%;
+    margin: 1% 0 2%;
+    border-radius: 10px;
+    
+    font-size: 15px;
+
+    animation: fromLeft 1s backwards;
+}
+
+form label.juntos input#fone1{
+    width: 6%;
+}
+
+form label.juntos input#fone2{
+    width: 61%;
+    margin-left: 0.5%;
+}
+
+.lado2 .fakeform{
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: 50% 50%;  
+    gap: 5% 7%;   
+}
+
+.lado2 .fakeform label.juntos{
+    width: 100%;
+    font-size: 20px;
+
+    margin: 2% 0;
+
+    animation: fromLeft .8s backwards;
+    animation-delay: .1s;
+}
+
+.lado2 .fakeform label.juntos input{
+    width: 100%;
+    
+    padding: 3% 2.5%;
+    margin-top: 3%;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    animation: fromLeft 1s backwards;
+}
+
+div.button {
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+}
+
+button.enviar {
+    width: 15%;
+    padding: 0.8% 0;
+    border-radius: 5px;
+    margin-right: 28%;
+    margin-top: 1%;
+
+    font-size: 14pt;
+
+    animation: fromRight .8s backwards;
+}
+
+button.enviar:hover {
+    cursor: pointer;
+}
+
+.lado2 button.enviar {
+    width: 35%;
+    padding: 1.8% 0;
+    border-radius: 5px;
+    margin-right: 17%;
+    margin-top: 1%;
+
+    font-size: 14pt;
+
+    animation: fromRight 1s backwards;
+}
+
+@keyframes fromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight{
+    from{
+        opacity: 0;
+        transform: translateX(+200%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

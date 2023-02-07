@@ -1,0 +1,86 @@
+html{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+div.centro{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.centro p{
+    color: bisque;
+    margin: 0;
+}
+
+div.centro p.nome{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35pt;
+}
+
+div.centro p.sub{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30pt;
+}
+
+div.centro img{
+    width: 20%;
+    margin-bottom: 1%;
+}
+
+div.centro .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2%;
+}
+
+div.centro .buttons .butCad{
+    background: #B9DFFF;
+    width: 10%;
+    margin: 1%;
+    padding: 1% 0;
+    border-radius: 6%;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.centro .buttons .butCad:hover{
+    background: #016ABC;
+    width: 10%;
+    margin: 1%;
+    padding: 1% 0;
+    border-radius: 6%;
+    cursor: pointer;
+}
+
+div.centro .buttons .butLog{
+    background: #B9DFFF;
+    width: 10%;
+    margin: 1%;
+    padding: 1% 0;
+    border-radius: 6%;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.centro .buttons .butLog:hover{
+    background: #016ABC;
+    width: 10%;
+    margin: 1%;
+    padding: 1% 0;
+    border-radius: 6%;
+    cursor: pointer;
+}

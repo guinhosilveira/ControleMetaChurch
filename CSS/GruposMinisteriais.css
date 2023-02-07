@@ -1,0 +1,179 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 25pt;
+    color: aliceblue;
+    margin: 2% 0;
+
+    animation: fromTop 1.2s backwards;
+    animation-delay: .1s;
+}
+
+table {
+    width: 90%;
+    border-radius: 10px;
+    border: 0.1px solid #000000;
+    padding: 0;
+    margin: auto;
+    
+    animation: fromTop 1.2s backwards;
+    animation-delay: .1s;
+}
+
+thead {
+    width: 100%;
+    background-color: rgba(206, 206, 206, 0.6);
+    
+    font-size: 14pt;
+}
+
+tbody {
+    width: 100%;
+    
+    font-size: 12pt;
+}
+
+tr {
+    display: flex;
+    
+    width: 100%;
+    padding: 1.5% 0;
+}
+
+th {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    width: 100%;
+    display: flex;
+    
+    word-break: break-all;
+    color: aliceblue;
+    
+    padding: 1px 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    margin: 2% 0;
+    text-align: center;
+
+    animation: fromTop 1.2s backwards;
+    animation-delay: .1s;
+}
+
+.butCad {
+    height: 4rem;
+    width: 22%;
+    
+    margin: 0% 3%;
+    border-radius: 5px;
+    
+    font-size: 14pt;
+    color: aliceblue;
+    
+    background-color: rgb(40, 38, 38);
+    cursor: pointer;
+}
+
+footer{
+    display: flex;
+    margin-top: auto;
+
+    height: 12vh;
+    width: 100%;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: #CECECE;
+}
+
+footer div.infos{
+    font-size: 12pt;
+    color: rgb(44, 44, 45);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer div.infos a{
+    color: rgb(44, 44, 45);
+    text-decoration: none;
+}
+
+footer div.infos a:hover{
+    color: rgb(68, 68, 68);
+    text-decoration: underline;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(+50%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

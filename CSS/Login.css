@@ -1,0 +1,90 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.formul{
+    margin: 0 auto;
+    width: 70%;
+    
+    text-align: center;   
+}
+
+img {
+    width: 30%;
+}
+
+form.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.form label.juntos {
+    font-size: 20pt;
+    color: aliceblue;
+    width: 100%;
+    text-align: left;
+}
+
+.form label.juntos + label.juntos{
+    margin-bottom: 4%;
+}
+
+.form label.juntos input{
+    width: 100%;
+
+    padding: 2%;
+    margin: 1% 1% 2% 1%;
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+.form div.buttons{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form div.buttons button{
+    height: 4rem;
+    width: 25%;
+
+    margin: 0 3%;
+    border-radius: 5px;
+
+    font-size: 14pt;
+    color: aliceblue;
+
+    background-color: rgb(40, 38, 38);
+}
+
+.form div.buttons button:hover{
+    height: 4rem;
+    width: 25%;
+    margin: 0% 3%;
+    border-radius: 5px;
+    font-size: 14pt;
+    cursor: pointer;
+    background-color: rgb(25, 24, 24);
+    color: aliceblue;
+}

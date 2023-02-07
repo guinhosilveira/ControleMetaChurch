@@ -1,0 +1,142 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 25pt;
+    color: aliceblue;
+    margin: 2% 0;
+
+    animation: fromLeft 1.2s backwards;
+    animation-delay: .1s;
+}
+
+form{
+    width: 80%;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;    
+}
+
+form label.juntos{
+    font-size: 20px;
+    color: aliceblue;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    animation: fromLeft .8s backwards;
+    animation-delay: .1s;
+}
+
+form label.juntos input{
+    width: 97%;
+    
+    padding: 1.4% 1%;
+    margin: 1% 0 2%;
+    border-radius: 10px;
+    
+    font-size: 15px;
+
+    animation: fromLeft 1s backwards;
+}
+
+form label.juntos input#fone1{
+    width: 8%;
+}
+
+form label.juntos input#fone2{
+    width: 86%;
+    margin-left: 0.5%;
+}
+
+div.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    height: 4rem;
+    width: 22%;
+    
+    margin: 0% 3%;
+    border-radius: 5px;
+    
+    font-size: 14pt;
+    color: aliceblue;
+    
+    background-color: rgb(40, 38, 38);
+    cursor: pointer;
+    animation: fromRight 1s backwards;
+}
+
+@keyframes fromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight{
+    from{
+        opacity: 0;
+        transform: translateX(+200%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,71 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+    margin-top: 2%;
+}
+
+div#calendar {
+    width: 70%;
+    height: 90vh;
+    margin: 1% auto;
+    padding: 1%;
+
+    background-color: aliceblue;
+}
+
+form {
+    width: 100%;
+    text-align: end;
+}
+
+.butCad {
+    height: 4rem;
+    width: 22%;
+    
+    margin: 1% 15% 0 0;
+    border-radius: 5px;
+    
+    font-size: 14pt;
+    color: aliceblue;
+    
+    background-color: rgb(40, 38, 38);
+    cursor: pointer;
+}

@@ -1,0 +1,149 @@
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-position-y: 25%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    height: 12vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-right: 10%;
+
+    background-color: #CECECE;
+}
+
+header a{
+    margin: 0 3%;
+
+    text-decoration: none;
+    color: rgb(44, 44, 45);
+    font-size: 18pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: rgb(127, 131, 133);
+    font-size: 19pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 25pt;
+    color: aliceblue;
+    margin: 2% 0;
+
+    animation: fromRight 1.2s backwards;
+    animation-delay: .1s;
+}
+
+form {
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+label.juntos {
+    width: 100%;
+    margin: 1% 0;
+
+    display: flex;
+    flex-direction: column;
+
+    color: aliceblue;
+    font-size: 20px;
+
+    animation: fromLeft 1s backwards;
+    animation-delay: .1s;
+}
+
+label.juntos input{
+    width: 100%;
+    padding: 1.4% 1%;
+    margin: 1% 0;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+label.juntos select{
+    width: 102%;
+    padding: 1.4% 1%;
+    margin: 1% 0;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+div.button {
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+}
+
+button.butCad {
+    width: 15%;
+    padding: 0.8% 0;
+    border-radius: 5px;
+    margin-top: 1%;
+
+    background-color: #CECECE;
+    font-size: 17px;
+
+    cursor: pointer;
+    animation: fromRight 1.2s backwards;
+    animation-delay: .1s;
+}
+
+button.butCad + button.butCad {
+    margin-left: 1%;
+}
+
+button.butCad:hover {
+    background-color: #cececeb8;
+
+}
+
+@keyframes fromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight{
+    from{
+        opacity: 0;
+        transform: translateX(+200%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
