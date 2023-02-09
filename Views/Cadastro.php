@@ -1,7 +1,5 @@
 <?php
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -9,73 +7,98 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Dosis:wght@500;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/Cadastro.css">
+    
     <title>Administração MetaChurch</title>
 </head>
 <body>
     
-    <header>
+    <nav>
 
-        <a href="../Views/Agenda.php">Agenda</a>
-        <a href="../Views/Membros.php">Membros</a>
-        <a href="../Views/GruposMinisteriais.php">Ministérios</a>
+        <ul>
+            <li><a href="../Views/Agenda.php">Agenda</a></li>
+            <li><a href="../Views/Membros.php">Membros</a></li>
+            <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
+        </ul>
     
-    </header>
+    </nav>
 
     <main>
-
-        <section class="formul">
         
-            <form class="form" action="../Back-End/CadastroUsuario.php" method="POST">
+        <form action="../Back-End/CadastroUsuario.php" method="POST">
+
+            <fieldset>
+
+                <div class="fieldset-wrapper">
                     
-                <label class="juntos" for="idNome">
-                    Nome completo:
-                    <input type="text" name="nome" id="idNome" placeholder="Informe seu nome completo">
-                </label>
-                    
-                <label class="juntos" for="idEmail">
-                    Email:
-                    <input type="email" name="email" id="idEmail" placeholder="Informe o email">
-                </label>
-                    
-                <label class="juntos" for="idTel">
-                    Número de telefone: 
-                    <div class="fones">
-                        <input class="juntos" type="tel" name="fone1" id="fone1" placeholder="Informe o DDD" required maxlength="2">
-                        <input class="juntos" type="tel" name="fone2" id="fone2" placeholder="Informe o telefone" required maxlength="9">
+                    <div class="legend-wrapper">
+
+                        <legend>Cadastro de Usuário</legend>
+
                     </div>
-                </label>
+
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="event-name">
+                            Nome de Usuário:
+                            <span>(nome para uso na plataforma)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="nome" 
+                            id="event-name" 
+                            required    
+                        />
+
+                    </div>
+                        
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="event-email">
+                            Email do membro:
+                            <span>(email precisa estar cadastrado como membro)</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="event-email" 
+                            required
+                        />
+
+                    </div>
+
+                    <div class="checkbox-wrapper">
+
+                        <input 
+                            type="checkbox" 
+                            name="admin"
+                            id="event-admin"
+                        />
+                        <label 
+                            for="event-admin">
+                            Usuário administrador
+                        </label>
+
+                    </div>
                     
-                <label class="juntos" for="idSenha">
-                    Senha:
-                    <input type="password" name="senha" id="idSenha" placeholder="Informe a senha">
-                </label>
-                    
-                <div class="buttons">
-                    <button class="btCad" type="submit" name="enviar">Cadastrar</button>
-                    <button class="btCan" type="reset" name="excluir">Excluir</button>
                 </div>
-            
-            </form>
-            
-        </section>        
+                
+                <div class="buttons">
+                    <button type="submit" name="enviar">Cadastrar</button>
+                    <a href="Index.php"><button type="button">Cancelar</button></a>
+                </div>
+
+            </fieldset> 
+                
+        </form>
 
     </main>
-
-    <footer>
-
-        <div class="infos">
-
-            Contato presidencial: (51) 98414-0809 <br>
-            Instagram: <a href="https://www.instagram.com/meta.church/">@metachurch</a>
-            
-        </div>
-
-    </footer>
 
 </body>
 </html>

@@ -3,16 +3,6 @@ CREATE DATABASE IF NOT EXISTS CONTROLEMC;
 
 USE CONTROLEMC;
 
-CREATE TABLE IF NOT EXISTS tb_usuario (
-    id_user INT AUTO_INCREMENT,
-    nm_user VARCHAR(255) NOT NULL, 
-    email     VARCHAR(255) NOT NULL UNIQUE,
-    senha     VARCHAR(255) NOT NULL,
-    telefone  VARCHAR(255) UNIQUE,
-    adm       INT,
-    PRIMARY KEY(id_user)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-
 CREATE TABLE IF NOT EXISTS tb_membro (
     id_membro INT AUTO_INCREMENT,
     nm_membro VARCHAR(255) NOT NULL, 
@@ -25,6 +15,21 @@ CREATE TABLE IF NOT EXISTS tb_membro (
     bairro    VARCHAR(255),
     rua       VARCHAR(255),
     PRIMARY KEY(id_membro)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+CREATE TABLE IF NOT EXISTS tb_usuario (
+    id_user  INT AUTO_INCREMENT,
+    nm_user  VARCHAR(255) NOT NULL, 
+    email    VARCHAR(255) NOT NULL UNIQUE,
+    senha    VARCHAR(255) NOT NULL,
+    telefone VARCHAR(255) UNIQUE,
+    id_membro INT, 
+    adm      INT,
+    PRIMARY KEY(id_user)
+    ADD CONSTRAINT fk_membro_user
+        FOREIGN KEY id_membro
+        REFERENCES tb_membro(id_membro)
+        ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE IF NOT EXISTS tb_lider (
