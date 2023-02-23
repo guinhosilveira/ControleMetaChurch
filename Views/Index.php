@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Dosis:wght@500;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../CSS/Index.css">
@@ -10,14 +13,20 @@
     <title>Administração MetaChurch</title>
 </head>
 <body>
-    <nav>
 
-    </nav>
+    <div class="page">
 
-    <div class="centro">
-        <img src="../assets/MC.png" alt="">
-        <p class="nome">Administração MetaChurch</p>
-        <p class="sub">Controle de membresia, agendas e escalas, etc</p>
+        <img 
+            src="../assets/MC.png" 
+            alt="Logo da igreja MetaChurch"
+        />
+
+        <h1>
+            Administração MetaChurch
+        </h1>
+        <p>
+            Controle de membresia, agendas e escalas, etc
+        </p>
     
         <form class="buttons" action="" method="POST">
             <?php
@@ -41,11 +50,10 @@
             }
             
             ?>
+
         </form>
+
     </div>
 
-    <footer>
-
-    </footer>
 </body>
 </html>

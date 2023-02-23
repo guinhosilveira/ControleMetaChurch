@@ -1,86 +1,114 @@
-html{
-    height: 100%;
-    width: 100%;
-    background-color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
 }
 
 body{
-    height: 100%;
-    width: 100%;
-    margin: 0;
+    height: 100vh;
+
+    display: flex;
+
+    background-color: black;
+
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+    color: #d8e5f0;
 }
 
-div.centro{
-    height: 90%;
+div.page{    
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
-div.centro p{
-    color: bisque;
-    margin: 0;
+form, h1, p {
+    animation-name: fromTop;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
 }
 
-div.centro p.nome{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 35pt;
+.page img {
+    animation-name: fromBottom;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
 }
 
-div.centro p.sub{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30pt;
+.page h1{
+    font-size: 3.5rem;
 }
 
-div.centro img{
-    width: 20%;
-    margin-bottom: 1%;
+.page p{
+    font-size: clamp(1.5rem, 2.6rem, 3rem);
 }
 
-div.centro .buttons{
+.page .buttons{
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin-top: 2%;
+    gap: 1rem;
 }
 
-div.centro .buttons .butCad{
-    background: #B9DFFF;
-    width: 10%;
-    margin: 1%;
+.page .buttons button{
+    width: 25%;
     padding: 1% 0;
-    border-radius: 6%;
-    font-size: large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 
-div.centro .buttons .butCad:hover{
-    background: #016ABC;
-    width: 10%;
-    margin: 1%;
-    padding: 1% 0;
-    border-radius: 6%;
+    background-color: #C4C1C1;
+    border-radius: 1rem;
+
+    font-size: 1.6rem;
+
     cursor: pointer;
+    transition-property: transform;
+    transition-duration: 300ms;
 }
 
-div.centro .buttons .butLog{
-    background: #B9DFFF;
-    width: 10%;
-    margin: 1%;
-    padding: 1% 0;
-    border-radius: 6%;
-    font-size: large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.page .buttons button:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
-div.centro .buttons .butLog:hover{
-    background: #016ABC;
-    width: 10%;
-    margin: 1%;
-    padding: 1% 0;
-    border-radius: 6%;
-    cursor: pointer;
+@keyframes fromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(+4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 1000px) {
+    .page img {
+        width: 28%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .page img {
+        width: 38%;
+    }
 }

@@ -15,7 +15,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Dosis:wght@500;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,30 +26,54 @@
 
     <main>
 
-        <section class="formul">
-        
-            <img src="../assets/MC.png" class="foto" alt="Foto do ícone da Igreja">
-
-            <form class="form" action="../Back-End/Login.php" method="POST">
-                    
-                <label class="juntos" for="idEmail">
-                    Email:
-                    <input type="email" name="email" id="idEmail" placeholder="Informe o email">
-                </label>
-                    
-                <label class="juntos" for="idSenha">
-                    Senha: 
-                    <input type="password" name="senha" id="idSenha" placeholder="Informe a senha">
-                </label>
-                    
-                <div class="buttons">
-                    <button class="btLog" type="submit" name="logar">Logar</button>
-                    <button class="btCan" type="reset" name="resetar">Resetar</button>
-                </div>
-    
-            </form>
+        <form action="../Back-End/Login.php" method="POST">
             
-        </section>        
+            <fieldset>
+
+                <div class="fieldset-wrapper">
+                    
+                    <img src="../assets/MC.png" class="foto" alt="Foto do ícone da Igreja">
+                       
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="idEmail">
+                            Email:
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="idEmail" 
+                            required
+                        />
+
+                    </div>
+                    
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="idSenha">
+                            Senha: 
+                        </label>
+                        <input 
+                            type="password" 
+                            name="senha" 
+                            id="idSenha" 
+                            required
+                        />
+
+                    </div>
+                            
+                    <div class="buttons">
+                        <button class="btLog" type="submit" name="logar">Logar</button>
+                        <button class="btCan" type="reset" name="resetar">Resetar</button>
+                    </div>
+
+                </div>
+
+            </fieldset>
+    
+        </form>        
 
     </main>
 

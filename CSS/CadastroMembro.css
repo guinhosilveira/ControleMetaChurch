@@ -1,166 +1,215 @@
-body{
-    background-image: url(../assets/Fundo.jpg);
-    background-position-y: 25%;
-    background-size: 100% auto;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
+* {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-    height: 12vh;
-    
+:root {
+    font-size: 62.5%;
+}
+
+body{
+    background-image: url(../assets/Fundo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
+
     display: flex;
     align-items: center;
     justify-content: end;
 
-    padding-right: 10%;
-
-    background-color: #CECECE;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
 }
 
-header a{
-    margin: 0 3%;
-
-    text-decoration: none;
-    color: rgb(44, 44, 45);
-    font-size: 18pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-header a:hover{
-    text-decoration: none;
-    color: rgb(127, 131, 133);
-    font-size: 19pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-main {
-    width: 100%;
-
-    color: aliceblue;
+ul {
+    list-style: none;
 
     display: flex;
-    align-items: center;
+    gap: 2.5rem;
 }
 
-section{
+nav ul li a {
+    text-decoration: none;
+    color: #787878;
+}
+
+nav ul li a:hover {
+    color: #646363;
+}
+
+.lado1,
+.lado2{
+    width: 90%;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    background-color: #F0F0F4;
+    border-radius: 1rem;
+}
+
+.legend-wrapper {
     width: 100%;
-    padding: 0 5%;
-    margin: 2% 0;
+    height: 10rem;
+    padding-left: 6%;
+    
+    display: flex;
+    align-items: center;
+
+    background-color: #EAE8E8;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #D8D8DB;
 }
 
-h1 {
-    font-size: 25pt;
+fieldset legend {
+    font-family: 'Archivo', sans-serif;
+    font-size: 2.6rem;
+    line-height: 3.4rem;
 
     animation: fromLeft 1.2s backwards;
     animation-delay: .1s;
 }
 
-form{
-    width: 100%;
-    
-    display: flex;
-    flex-direction: column;    
-}
-
-form label.juntos{
-    font-size: 20px;
-    color: aliceblue;
+.input-wrapper{
+    padding-left: 6%;
 
     display: flex;
     flex-direction: column;
-
-    animation: fromLeft .8s backwards;
+    gap: 1rem;
+    
+    animation: fromLeft 1s backwards;
     animation-delay: .1s;
 }
 
-form label.juntos input{
-    width: 70%;
+.input-wrapper label {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: #5F5E5E;
+}
+
+.input-wrapper label span {
+    font-size: 1.4rem;
+    color: #A3A0A0;
+}
+
+.input-wrapper label span:hover {
+    color: #838383;
+}
+
+.input-wrapper input{
+    width: 80%;  
+    padding: 1.2% 1%;
+
+    border: 1px solid #A3A0A0;
+    border-radius: 1rem;
     
-    padding: 1.4% 1%;
-    margin: 1% 0 2%;
-    border-radius: 10px;
-    
-    font-size: 15px;
+    font-size: 1.5rem;
+    color: #A3A0A0;
 
     animation: fromLeft 1s backwards;
 }
 
-form label.juntos input#fone1{
+.input-wrapper input:invalid {
+    border: 2px solid red;
+}
+
+.fones {
+    display: flex;
+    gap: 1%;
+}
+
+.fones input#fone1{
     width: 6%;
 }
 
-form label.juntos input#fone2{
-    width: 61%;
-    margin-left: 0.5%;
+.fones input#fone2{
+    width: 73%;
 }
 
-.lado2 .fakeform{
-    width: 90%;
-
-    display: grid;
-    grid-template-columns: 50% 50%;  
-    gap: 5% 7%;   
-}
-
-.lado2 .fakeform label.juntos{
+.buttons {
     width: 100%;
-    font-size: 20px;
-
-    margin: 2% 0;
-
-    animation: fromLeft .8s backwards;
-    animation-delay: .1s;
-}
-
-.lado2 .fakeform label.juntos input{
-    width: 100%;
-    
-    padding: 3% 2.5%;
-    margin-top: 3%;
-    border-radius: 10px;
-
-    font-size: 15px;
-
-    animation: fromLeft 1s backwards;
-}
-
-div.button {
-    width: 100%;
+    height: 10rem;
+    padding-right: 20%;
 
     display: flex;
-    justify-content: right;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+
+    background-color: #EAE8E8;
+    border-top: 1px solid #D8D8DB;
+    border-radius: 0 0 1rem 1rem;
 }
 
-button.enviar {
-    width: 15%;
-    padding: 0.8% 0;
-    border-radius: 5px;
-    margin-right: 28%;
-    margin-top: 1%;
-
-    font-size: 14pt;
-
-    animation: fromRight .8s backwards;
-}
-
-button.enviar:hover {
+.buttons button {
+    width: 25%;
+    padding: 1% 0;
+    
+    background-color: #C4C1C1;
+    border-radius: 8px;
+    border: none;
+    
+    font-size: 1.6rem;
+    
     cursor: pointer;
+    animation: fromRight .8s backwards;
+    transition-duration: 500ms;
 }
 
-.lado2 button.enviar {
-    width: 35%;
-    padding: 1.8% 0;
-    border-radius: 5px;
-    margin-right: 17%;
-    margin-top: 1%;
+.buttons a {
+    width: 25%;
+    text-decoration: none;
+}
 
-    font-size: 14pt;
+.buttons a button {
+    width: 100%;
+    padding: 4% 0;
+}
 
-    animation: fromRight 1s backwards;
+button:hover {
+    opacity: 0.7;
+}
+
+.lado2 .fieldset-wrapper{
+    padding: 3rem;
+
+    display: grid;
+    gap: 5rem 3rem;
+    grid-template-columns: 50% 50%;  
+
+    border-radius: 0;
+}
+
+.lado2 .input-wrapper {
+    padding: 0;
+}
+
+.lado2 .input-wrapper input {
+    width: 90%;
+    padding: 2.4% 1%;
+}
+
+.lado2 .buttons {
+    padding: 0;
+    justify-content: center;
 }
 
 @keyframes fromLeft{
@@ -184,5 +233,50 @@ button.enviar:hover {
     to{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .input-wrapper input {
+        width: 90%;
+    }
+
+    .input-wrapper label {
+        font-size: 1.4rem;
+    }
+
+    .input-wrapper label span {
+        font-size: 1.2rem;
+    }
+
+    .fones input#fone1{
+        width: 15%;
+    }
+    
+    .fones input#fone2{
+        width: 74%;
+    }
+
+    .buttons {
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .buttons button {
+        width: 40%;
+    }
+
+    .buttons a {
+        width: 40%;
+    }
+
+    .lado2 .fieldset-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lado2 .buttons {
+        margin-bottom: 5%;
     }
 }

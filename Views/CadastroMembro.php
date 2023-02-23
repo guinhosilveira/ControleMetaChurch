@@ -7,6 +7,10 @@ include '../Back-End/Protetor.php';
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Dosis:wght@500;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,105 +21,239 @@ include '../Back-End/Protetor.php';
 </head>
 <body>
     
-    <header>
+    <nav>
 
-        <a href="../Views/Agenda.php">Agenda</a>
-        <a href="../Views/Membros.php">Membros</a>
-        <a href="../Views/GruposMinisteriais.php">Ministérios</a>
-    
-    </header>
+        <ul>
+
+            <li>
+                <a href="../Views/Agenda.php">
+                    Agenda
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    href="../Views/Membros.php">
+                    Membros
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    href="../Views/GruposMinisteriais.php"/>
+                    Ministérios
+                </a>
+            </li>
+
+        </ul>
+            
+    </nav>
 
     <main>
         
-        <section class="lado1">
+        <form action="../Back-End/CadastroMembro.php" method="POST">
+            
+            <fieldset class="lado1">
 
-            <h1>
+                <div class="fieldset-wrapper">
 
-                Informações Obrigatórias
+                    <div class="legend-wrapper">
 
-            </h1>
-
-            <form action="../Back-End/CadastroMembro.php" method="POST">
-
-                <label class="juntos" for="nome">
-                    Nome:
-                    <input class="juntos" type="text" name="nome" id="nome" placeholder="Informe o nome" required>
-                </label>
+                        <legend>
     
-                <label class="juntos" for="fone">
-                    Telefone:
-                    <div class="fones">
-                        <input class="juntos" type="tel" name="fone1" id="fone1" placeholder="Informe o DDD" required maxlength="2">
-                        <input class="juntos" type="tel" name="fone2" id="fone2" placeholder="Informe o telefone" required maxlength="9">
+                            Informações Obrigatórias
+    
+                        </legend>
+
                     </div>
-                </label>
-    
-                <label class="juntos" for="senha">
-                    Senha:
-                    <input class="juntos" type="password" name="senha" id="senha" placeholder="Informe a Senha" required>
-                </label>
-    
-                <label class="juntos" for="confsenha">
-                    Confirmar senha:
-                    <input class="juntos" type="password" name="confsenha" id="confsenha" placeholder="Confirme a Senha" required>
-                </label>
 
-                <div class="button">
-                    <button type="button" onclick="Mudarestado()" class="enviar">Enviar</button>
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="nome">
+                            Nome:
+                        </label>
+                        <input 
+                            type="text" 
+                            name="nome" 
+                            id="nome" 
+                            required
+                        />
+
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="fone">
+                            Telefone: <span>Primeiro o DDD depois o número</span>
+                        </label>
+                        <div class="fones">
+                            <input 
+                                type="tel" 
+                                name="fone1" 
+                                id="fone1" 
+                                maxlength="2"
+                                required
+                            />
+                            <input  
+                                type="tel" 
+                                name="fone2" 
+                                id="fone2" 
+                                maxlength="9" 
+                                required 
+                            />
+                        </div>
+
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="senha">
+                            Senha:
+                        </label>
+                        <input 
+                            type="password" 
+                            name="senha" 
+                            id="senha" 
+                            required
+                        />
+
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <label 
+                            for="confsenha">
+                            Confirmar senha:
+                        </label>
+                        <input 
+                            type="password" 
+                            name="confsenha" 
+                            id="confsenha" 
+                            required
+                        />
+
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" onclick="Mudarestado()" class="enviar">Enviar</button>
+                        <a href="Index.php"><button type="button">Cancelar</button></a>
+                    </div>
+
                 </div>
 
-        </section>
+            </fieldset>
 
-        <section class="lado2" hidden>
+            <fieldset class="lado2" hidden>
+            
+                <div class="legend-wrapper">
 
-            <h1>
-
-                Informações Opcionais
-
-            </h1>
-
-            <div class="fakeform">
-
-                <label class="juntos" for="data">
-                    Data de Nascimento:
-                    <input class="juntos" type="date" name="data" id="data">
-                </label>
+                    <legend>
+        
+                        Informações Opcionais
+        
+                    </legend>
                     
-                <label class="juntos" for="ano">
-                    Ano de Ingresso:
-                    <input class="juntos" type="tel" name="ano" id="ano" placeholder="Informe o ano de ingresso na igreja" maxlength="4">
-                </label>
+                </div>
 
-                <label class="juntos" for="email">
-                    Email:
-                    <input class="juntos" type="email" name="email" id="email" placeholder="Informe o email">
-                </label>
+                <div class="fieldset-wrapper">
+                    
+                    <div class="input-wrapper">
     
-                <label class="juntos" for="cidade">
-                    Cidade:
-                    <input class="juntos" type="text" name="cidade" id="cidade" placeholder="Informe a cidade">
-                </label>
+                        <label 
+                            for="data">
+                            Data de Nascimento:
+                        </label>
+                        <input 
+                            type="date" 
+                            name="data" 
+                            id="data"
+                        />
     
-                <label class="juntos" for="bairro">
-                    Bairro:
-                    <input class="juntos" type="text" name="bairro" id="bairro" placeholder="Informe o bairro">
-                </label>
+                    </div>
     
-                <label class="juntos" for="rua">
-                    Rua e número:
-                    <input class="juntos" type="text" name="rua" id="rua" placeholder="Informe a rua (XXXXXXXX, 123)">
-                </label>
+                    <div class="input-wrapper">
+    
+                        <label 
+                            for="ano">
+                            Ano de Ingresso: <span>Informe o ano de ingresso na igreja</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            name="ano" 
+                            id="ano" 
+                            maxlength="4"
+                        />
+    
+                    </div>
+    
+                    <div class="input-wrapper">
+                    
+                        <label 
+                            for="email">
+                            Email:
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                        />
+    
+                    </div>
+    
+                    <div class="input-wrapper">
+    
+                        <label for="cidade">
+                            Cidade:
+                        </label>
+                        <input 
+                            type="text" 
+                            name="cidade" 
+                            id="cidade" 
+                        />
+    
+                    </div>
+    
+                    <div class="input-wrapper">
+    
+                        <label 
+                            for="bairro">
+                            Bairro:
+                        </label>
+                        <input 
+                            type="text" 
+                            name="bairro" 
+                            id="bairro" 
+                        />
+    
+                    </div>
+    
+                    <div class="input-wrapper">
+    
+                        <label 
+                            for="rua">
+                            Rua e número: <span>(Botafogo, 531)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="rua" 
+                            id="rua" 
+                        />
+    
+                    </div>
+    
+                </div>  
 
-                <div></div>
-                <div class="button">
+                <div class="buttons">
                     <button type="submit" class="enviar" name="enviar">Enviar</button>
+                    <a href="Index.php"><button type="button">Cancelar</button></a>
                 </div>
                 
-            </form> 
+            </fieldset>    
 
-            </div>    
-
-        </section>
+        </form> 
 
     </main>
 

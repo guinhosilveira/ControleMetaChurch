@@ -1,12 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+input, button {
+    font-family: 'Mulish', sans-serif;
+}
+
 body{
+    height: 100vh;
+
     background-image: url(../assets/Fundo.jpg);
-    background-position-y: 25%;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
 
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 main {
@@ -17,74 +31,110 @@ main {
     justify-content: center;
 }
 
-section.formul{
-    margin: 0 auto;
-    width: 70%;
-    
-    text-align: center;   
+form {
+    width: 100%;
 }
 
 img {
-    width: 30%;
+    width: clamp(25%, 33%, 35%);
+    height: clamp(25%, 33%, 35%);
+
+    animation-name: fromTop;
+    animation-duration: 1s;
 }
 
-form.form {
-    width: 100%;
+form fieldset {
+    border: none;
+}
+
+.fieldset-wrapper {
+    width: 70%;
+    margin: 0 auto;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column;    
+    gap: 3rem;
 }
 
-.form label.juntos {
-    font-size: 20pt;
-    color: aliceblue;
-    width: 100%;
-    text-align: left;
-}
-
-.form label.juntos + label.juntos{
-    margin-bottom: 4%;
-}
-
-.form label.juntos input{
+.input-wrapper {
     width: 100%;
 
-    padding: 2%;
-    margin: 1% 1% 2% 1%;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 2.5rem;
+    color: #D8E5F0;
+}
+
+.input-wrapper input{
+    padding: 1.3%;
+    margin-top: 0.5%;
+
+    background-color: #E2DEDE;
     border-radius: 10px;
 
-    font-size: 15px;
+    font-size: 1.5rem;
+
+    animation-name: fromLeft;
+    animation-duration: 1s;
 }
 
-.form div.buttons{
+.input-wrapper input:invalid {
+    border: 2px solid red;
+}
+
+form div.buttons{
     width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 }
 
-.form div.buttons button{
-    height: 4rem;
-    width: 25%;
+form div.buttons button{
+    height: 5rem;
+    width: 30%;
 
-    margin: 0 3%;
     border-radius: 5px;
+    border: none;
 
-    font-size: 14pt;
+    font-size: 1.8rem;
     color: aliceblue;
 
-    background-color: rgb(40, 38, 38);
-}
-
-.form div.buttons button:hover{
-    height: 4rem;
-    width: 25%;
-    margin: 0% 3%;
-    border-radius: 5px;
-    font-size: 14pt;
+    background-color: #C4C1C1;
+    
     cursor: pointer;
-    background-color: rgb(25, 24, 24);
-    color: aliceblue;
+    transition-duration: 500ms;
+    animation-name: fromLeft;
+    animation-duration: 1s;
+    animation-delay: 300ms;
+    animation-fill-mode: backwards;
+}
+
+form div.buttons button:hover{
+    opacity: 0.8;
+}
+
+@keyframes fromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

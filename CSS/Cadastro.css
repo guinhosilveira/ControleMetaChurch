@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 62.5%;
+}
+
 body {
     background-image: url(../assets/Fundo.jpg);
     background-size: 100% 100%;
@@ -22,14 +26,14 @@ nav {
     justify-content: end;
 
     font-family: 'JetBrains Mono', monospace;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 ul {
     list-style: none;
 
     display: flex;
-    gap: 25px;
+    gap: 2.5rem;
 }
 
 nav ul li a {
@@ -41,10 +45,13 @@ nav ul li a:hover {
     color: #646363;
 }
 
-
 form {
     width: 55%;
     margin: auto;
+
+    animation-name: fromTop;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
 }
 
 form fieldset {    
@@ -57,16 +64,16 @@ form fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 4rem;
     
-    border-radius: 10px 10px 0 0;
+    border-radius: 1rem 1rem 0 0;
     background-color: #F0F0F4;
 }
 
 .legend-wrapper {
     width: 100%;
 
-    border-radius: 10px 10px 0 0;
+    border-radius: 1rem 1rem 0 0;
     background-color: #EAE8E8;
 }
 
@@ -74,11 +81,10 @@ fieldset legend {
     padding: 3% 5%;
     
     font-family: 'Archivo', sans-serif;
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 34px;
+    font-size: 2.6rem;
+    line-height: 3.4rem;
     
-    border-radius: 10px 10px 0 0;
+    border-radius: 1rem 1rem 0 0;
     border-bottom: 1px solid #D8D8DB;
 }
 
@@ -87,7 +93,7 @@ fieldset legend {
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
 
     padding: 0 5%;
 }
@@ -100,7 +106,7 @@ fieldset legend {
     border: 1px solid #A3A0A0;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #A3A0A0;
 }
 
@@ -109,13 +115,13 @@ fieldset legend {
 }
 
 .input-wrapper label { 
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1.8rem;
+    line-height: 2rem;
     color: #5F5E5E;
 }
 
 .input-wrapper label span { 
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #A3A0A0;
 }
 
@@ -135,14 +141,14 @@ fieldset legend {
 
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 1.6rem;
 
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 .checkbox-wrapper input {
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 
     position: absolute;
     top: 0;
@@ -153,8 +159,8 @@ fieldset legend {
 
 .checkbox-wrapper label::before {
     content: '';
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 
     display: block;
 
@@ -172,10 +178,10 @@ fieldset legend {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 3rem;
 
     background-color: #EAE8E8;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 1rem 1rem;
     border-top: 1px solid #D8D8DB;
 }
 
@@ -196,14 +202,33 @@ fieldset legend {
 
     background-color: #c4c1c1;
     border: none;
-    border-radius: 8px;
+    border-radius: 1rem;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
 
+    transition-duration: 300ms;
     cursor: pointer;
 }
 
 .buttons button:hover {
-    background-color: #b4b2b2;
+    opacity: 0.7;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(+4rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 70%;
+    }
 }
