@@ -13,6 +13,8 @@ body{
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
+    font-size: 1.6rem;
 }
 
 body, button {

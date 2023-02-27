@@ -6,9 +6,9 @@ body: 'Poppins', sans-serif;
 navigation menu: 'JetBrains Mono', monospace; #787878;
 navigation menu:hover: #646363;
 
-.fieldset-wrapper: #F0F0F4;
+(corpo).fieldset-wrapper: #F0F0F4;
 
-.legend-wrapper: #EAE8E8;
+(cabeçalho e final).legend-wrapper: #EAE8E8;
 legend: 'Archivo', sans-serif; 
 legend separator: #D8D8DB;
 
