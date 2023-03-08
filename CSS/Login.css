@@ -24,6 +24,20 @@ body{
     font-size: 1.6rem;
 }
 
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
 main {
     height: 100vh;  
 
@@ -36,8 +50,6 @@ form {
 }
 
 img {
-    /* width: clamp(25%, 33%, 35%);
-    height: clamp(25%, 33%, 35%); */
     width: min(44rem, 60%);
     height: min(44rem, 60%);
 
@@ -76,7 +88,9 @@ form fieldset {
     background-color: #E2DEDE;
     border-radius: 10px;
 
-    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(.6rem, .8rem + 1vw, 1.4rem);
+    color: #A3A0A0;
 
     animation-name: fromLeft;
     animation-duration: 1s;
@@ -121,7 +135,7 @@ form div.buttons button:hover{
 @keyframes fromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-4rem);
+        transform: translateX(-3rem);
     }
     100% {
         opacity: 1;
@@ -132,7 +146,7 @@ form div.buttons button:hover{
 @keyframes fromTop {
     0% {
         opacity: 0;
-        transform: translateY(-4rem);
+        transform: translateY(-3rem);
     }
     100% {
         opacity: 1;

@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    height: 100%;
+}
+
+body {    
+    min-height: 100%;
+    position: relative;
+
+    background-image: url(../assets/Fundo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav, footer .infos, a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    color: #787878;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: .1rem .1rem #000;
+}
+
+
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    gap: 2.5rem;
+}
+
+a:hover {
+    color: #646363;
+}
+
+main {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    
+    animation: fromTop 1s backwards;
+    animation-delay: .4s;
+}
+
+.title-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 5.5%;
+
+    display: flex;
+    border-bottom: 1px solid #D8D8DB;
+}
+
+h1 {
+    width: fit-content;
+
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1.6rem, 1.4rem + 2vw, 4.5rem);
+    font-weight: normal;
+    color: #EAE8E8;
+
+    animation: scaleChange 1s backwards;
+}
+
+.verse-day-wrapper {
+    width: 50%;
+    margin: 0 auto;
+
+    display: grid;
+    gap: 3rem;
+}
+
+.verse-day-wrapper p,
+.verse-day-wrapper span {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.verse-day-wrapper p {
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    line-height: 2.8rem;
+    text-align: justify;
+    color: #EAE8E8;
+}
+
+.verse-day-wrapper span {
+    font-size: clamp(1.4rem, 1.2rem + 1vw, 2.2rem);
+    text-align: right;
+    color: #E2DEDE;
+}
+
+.cards-wrapper {
+    width: 100%;
+    padding: 2% 0 4%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: #F0F0F4;
+}
+
+.cards-wrapper h2 {
+    font-size: clamp(1.8rem, 1.5rem + 1vw, 3rem);
+}
+
+.cards {
+    width: 80%;
+
+    display: grid;
+    grid-template-areas: 'A B C';
+    gap: 5rem;
+}
+
+.card {
+    padding: 5%;
+
+    position: relative;
+
+    background-color: #D8D8DB;
+    border-radius: 1rem;
+
+    text-align: center;
+}
+
+.card h3 {
+    margin: 3% 0 5%;
+
+    font-size: clamp(1.2rem, 1rem + 1vw, 2.2rem);
+}
+
+.card img {
+    width: 100%;
+
+    border-radius: 1rem;
+}
+
+.ministry-wrapper {
+    width: 100%;
+    margin-bottom: 25%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ministry {
+    padding: 4%;
+
+    background-color: #D8D8DB;
+    border-radius: 1rem;
+    border: 1px solid #EAE8E8;;
+    box-shadow: 1rem 1rem 4rem 3px rgb(0 0 0 / 50%);
+}
+
+footer {
+    height: 22vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    main {
+        gap: 3rem;
+    }
+
+    .verse-day-wrapper {
+        width: 70%;
+    }
+
+    .cards {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 650px) { 
+    .cards-wrapper {
+        margin-bottom: 35%;
+    }
+}
+
+@media (max-width: 450px) { 
+    .cards-wrapper {
+        margin-bottom: 50%;
+    }
+}

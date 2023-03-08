@@ -18,23 +18,23 @@ CREATE TABLE IF NOT EXISTS tb_membro (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE IF NOT EXISTS tb_usuario (
-    id_user  INT AUTO_INCREMENT,
-    nm_user  VARCHAR(255) NOT NULL, 
-    email    VARCHAR(255) NOT NULL UNIQUE,
-    senha    VARCHAR(255) NOT NULL,
-    telefone VARCHAR(255) UNIQUE,
+    id_user   INT AUTO_INCREMENT,
+    nm_user   VARCHAR(255) NOT NULL, 
+    email     VARCHAR(255) NOT NULL UNIQUE,
+    senha     VARCHAR(255) NOT NULL,
+    telefone  VARCHAR(255) UNIQUE,
     id_membro INT, 
-    adm      INT,
-    PRIMARY KEY(id_user)
-    ADD CONSTRAINT fk_membro_user
-        FOREIGN KEY id_membro
+    type_user INT,
+    PRIMARY KEY(id_user),
+    CONSTRAINT fk_membro_user
+        FOREIGN KEY (id_membro)
         REFERENCES tb_membro(id_membro)
         ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE IF NOT EXISTS tb_lider (
     id_lider INT AUTO_INCREMENT,
-    id_user INT NOT NULL,
+    id_user  INT NOT NULL,
     PRIMARY KEY(id_lider),
     CONSTRAINT fk_user_lider
         FOREIGN KEY (id_user)
@@ -79,6 +79,20 @@ CREATE TABLE IF NOT EXISTS tb_ministerios (
         ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
+CREATE TABLE IF NOT EXISTS tb_posts_ministeriais (
+    id_post       INT AUTO_INCREMENT,
+    nm_post       VARCHAR(255) NOT NULL,
+    video         VARCHAR(255),
+    text_post     TEXT NOT NULL,
+    data_post     DATE NOT NULL,
+    id_ministerio INT NOT NULL,
+    PRIMARY KEY (id_post),
+    CONSTRAINT fk_ministerio_post
+        FOREIGN KEY (id_ministerio) 
+        REFERENCES tb_ministerios(id_ministerio)
+        ON DELETE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
 CREATE TABLE IF NOT EXISTS tb_usuario_ministerio (
     id            INT AUTO_INCREMENT,
     nm_user       VARCHAR(255) NOT NULL,
@@ -112,4 +126,3 @@ CREATE TABLE IF NOT EXISTS tb_infantil (
         REFERENCES tb_lider(id_lider)
         ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-

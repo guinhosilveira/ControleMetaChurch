@@ -1,126 +1,196 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
     background-image: url(../assets/Fundo.jpg);
-    background-position-y: 25%;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
 
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
 }
 
-header{
-    height: 12vh;
-    
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
+body, button, input {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
+
     display: flex;
     align-items: center;
     justify-content: end;
 
-    padding-right: 10%;
-
-    background-color: #CECECE;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
 }
 
-header a{
-    margin: 0 3%;
+ul {
+    list-style: none;
 
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: rgb(44, 44, 45);
-    font-size: 18pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: .1rem .1rem #000;
+    color: #787878;
 }
 
-header a:hover{
-    text-decoration: none;
-    color: rgb(127, 131, 133);
-    font-size: 19pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+nav ul li a:hover {
+    color: #646363;
 }
 
-main {
+.title-wrapper {
     width: 100%;
-    margin: auto;
+    height: 10rem;
+    margin: 0 auto;
+    padding-left: 6%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    
+    background-color: #EAE8E8;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #D8D8DB;
 }
 
 h1 {
-    font-size: 25pt;
-    color: aliceblue;
-    margin: 2% 0;
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1.5rem, 1.5rem + 2vw, 3.5rem);
+    line-height: 3.4rem;
 
     animation: fromLeft 1.2s backwards;
     animation-delay: .1s;
 }
 
-form{
-    width: 80%;
-    margin: auto;
-    
-    display: flex;
-    flex-direction: column;    
+form fieldset { 
+    border: none;
 }
 
-form label.juntos{
-    font-size: 20px;
-    color: aliceblue;
+.fieldset-wrapper {
+    width: 90%;
+    margin: auto;
 
-    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 3rem;
+    
+    background-color: #F0F0F4;
+    border-radius: 1rem;
+}
 
+.input-wrapper {
+    width: 100%;
+    padding-left: 6%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
     animation: fromLeft .8s backwards;
     animation-delay: .1s;
 }
 
-form label.juntos input{
-    width: 97%;
+.input-wrapper label {
+    font-size: clamp(1rem, 1.2rem + 1vw, 1.8rem);
+    line-height: 2rem;
+    color: #5F5E5E;
+}
+
+.input-wrapper input{
+    width: 80%;  
+    padding: 1.2% 1%;
+
+    border: 1px solid #A3A0A0;
+    border-radius: 1rem;
     
-    padding: 1.4% 1%;
-    margin: 1% 0 2%;
-    border-radius: 10px;
-    
-    font-size: 15px;
+    font-size: clamp(.6rem, .8rem + 1vw, 1.4rem);
+    color: #A3A0A0;
 
     animation: fromLeft 1s backwards;
 }
 
-form label.juntos input#fone1{
-    width: 8%;
+input:invalid {
+    border: 1px solid red;
 }
 
-form label.juntos input#fone2{
-    width: 86%;
-    margin-left: 0.5%;
+.fones {
+    display: flex;
+    gap: 1%;
+}
+
+.fones input#fone1{
+    width: 6%;
+}
+
+.fones input#fone2{
+    width: 73%;
 }
 
 div.button {
+    width: 100%;
+    height: 10rem;
+    margin: 0 auto;
+    padding: 0 18% 0 0;
+
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+
+    background-color: #EAE8E8;
+    border-radius: 0 0 1rem 1rem;
+    border-top: 1px solid #D8D8DB;
 }
 
 button {
-    height: 4rem;
     width: 22%;
-    
+    height: 4rem;
     margin: 0% 3%;
-    border-radius: 5px;
     
-    font-size: 14pt;
-    color: aliceblue;
+    background-color: #C4C1C1;
+    border-radius: .5rem;
+    border: none;
     
-    background-color: rgb(40, 38, 38);
+    font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+    
     cursor: pointer;
+
     animation: fromRight 1s backwards;
+    transition: 300ms;
+}
+
+button:hover {
+    opacity: 0.7;
 }
 
 @keyframes fromLeft{
     from{
         opacity: 0;
-        transform: translateX(-30%);
+        transform: translateX(-3rem);
     }
 
     to{
@@ -132,11 +202,39 @@ button {
 @keyframes fromRight{
     from{
         opacity: 0;
-        transform: translateX(+200%);
+        transform: translateX(+50rem);
     }
 
     to{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .input-wrapper input {
+        width: 90%;
+    }
+
+    .fones input#fone1{
+        width: 15%;
+    }
+    
+    .fones input#fone2{
+        width: 74%;
+    }
+
+    .buttons {
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .buttons button {
+        width: 40%;
+    }
+
+    .buttons a {
+        width: 40%;
     }
 }

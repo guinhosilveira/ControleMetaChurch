@@ -1,71 +1,341 @@
-body{
-    background-image: url(../assets/Fundo.jpg);
-    background-position-y: 25%;
-    background-size: 100% auto;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
+* {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-    height: 12vh;
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    height: 100%;
+}
+
+body, .content {
+    min-height: 100%;
+    position: relative;
+}
+
+body {    
+    background-image: url(../assets/Fundo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
+body, button, legend {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav, footer .infos, a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    color: #787878;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: .1rem .1rem #000;
+}
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
     
     display: flex;
     align-items: center;
     justify-content: end;
-
-    padding-right: 10%;
-
-    background-color: #CECECE;
 }
 
-header a{
-    margin: 0 3%;
+ul {
+    list-style: none;
 
-    text-decoration: none;
-    color: rgb(44, 44, 45);
-    font-size: 18pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    gap: 2.5rem;
 }
 
-header a:hover{
-    text-decoration: none;
-    color: rgb(127, 131, 133);
-    font-size: 19pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+a:hover {
+    color: #646363;
 }
 
 main {
     width: 100%;
-    margin-top: 2%;
+    
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    
+    animation: fromTop 1s backwards;
+    animation-delay: .4s;
 }
 
-div#calendar {
-    width: 70%;
+.title-wrapper{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2% 5.5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    background-color: #EAE8E8;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #D8D8DB;
+}
+
+h1 {
+    width: fit-content;
+
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1.6rem, 1.4rem + 2vw, 4.5rem);
+    font-weight: normal;
+
+    animation: scaleChange 1.2s backwards;
+}
+
+.calendar {
+    width: 80%;
     height: 90vh;
-    margin: 1% auto;
+    margin: 0 auto 15%;
     padding: 1%;
 
-    background-color: aliceblue;
+    background-color: #EAE8E8;
+    border-radius:  0 0 1rem 1rem;
+}
+
+div.fc-scrollgrid-sync-inner a.fc-col-header-cell-cushion {
+    text-transform: uppercase;
+}
+
+h2#fc-dom-1.fc-toolbar-title,
+legend {
+    font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
+}
+
+.fc-toolbar-title,
+.fc-toolbar-chunk .fc-button-group button {
+    font-size: clamp(.8rem, 1rem + 1vw, 1.6rem);
+    text-transform: capitalize;
+}
+
+div.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
+    cursor: alias;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.container {
+    margin-top: -27%;
+
+    display: grid;
+    place-content: center;
+
+    position: absolute;
+    inset: 0;
+}
+
+.modal.hide,
+.hide {
+    height: 0;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    width: clamp(25rem, 20rem + 20vw, 55rem);
+    height: 25rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    z-index: 3;
+    
+    background-color: #D8D8DB;
+    border-radius: 1rem;
+    border: 1px solid #EAE8E8;;
+    box-shadow: 1rem 1rem 4rem 3px rgb(0 0 0 / 50%);
+
+    text-align: center;
+
+    animation-name: fromTop;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+.modal #butCloseFirst,
+.modal #butCloseSecond {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.modal p {
+    font-size: clamp(.8rem, 1.2rem + 1vw, 2rem);
 }
 
 form {
     width: 100%;
-    text-align: end;
+
+    animation: fromTop 1.2s backwards;
+    animation-delay: .1s;
+}
+
+form fieldset {
+    border: none;
+}
+
+.fieldset-wrapper {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.fieldset-wrapper legend {
+    font-weight: bold;
 }
 
 .butCad {
-    height: 4rem;
-    width: 22%;
-    
-    margin: 1% 15% 0 0;
-    border-radius: 5px;
-    
-    font-size: 14pt;
-    color: aliceblue;
-    
-    background-color: rgb(40, 38, 38);
+    width: 50%;
+    height: 5rem;
+
+    background-color: #C4C1C1;
+    border-radius: .5rem;
+    border: none;
+
+    font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+
     cursor: pointer;
+    transition: 300ms;
+}
+
+.butCad:hover {
+    opacity: .7;
+}
+
+footer{
+    height: 22vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(+3rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleChange {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1094px) {
+    h1 {
+        margin: auto;
+    }
+
+    .calendar, 
+    .title-wrapper {
+        width: 90%;
+    }
+
+    .calendar {
+        margin-bottom: 20%;
+    }
+
+    div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+        margin: 5% 3%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    div.fc-direction-ltr .fc-toolbar .fc-button-group {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .calendar {
+        margin-bottom: 30%;
+    }
+
+    footer {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width:450px) {
+    .calendar {
+        margin-bottom: 45%;
+    }
+
+    button.fc-today-button.fc-button.fc-button-primary,
+    button.fc-prevYear-button.fc-button.fc-button-primary, 
+    button.fc-nextYear-button.fc-button.fc-button-primary,
+    button.fc-timeGridWeek-button.fc-button.fc-button-primary {
+        display: none;
+    }
+
+    div.fc-direction-ltr .fc-toolbar .fc-button-group{
+        width: 83vw;
+        margin: 0;
+    }
 }

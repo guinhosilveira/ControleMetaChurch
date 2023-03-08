@@ -23,13 +23,15 @@ if (isset($_REQUEST['logar'])) {
             $_SESSION['senha']    = $dados['senha'];
             $_SESSION['telefone'] = $dados['telefone'];
             
-            if ($dados['adm'] == 1) {
-                $_SESSION['adm'] = $dados['adm'];
+            if ($dados['type_user'] == 1) {
+                $_SESSION['adm'] = $dados['type_user'];
+            } elseif ($dados['type_user'] == 2) {
+                $_SESSION['dir'] = $dados['type_user'];
             }
             
             echo "<script>
                     alert('Login realizado!');
-                    window.location.href = '../Views/CadastroMembro.php';
+                    window.location.href = '../Views/Index.php';
                   </script>";
 
         } else {

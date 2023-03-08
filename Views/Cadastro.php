@@ -7,10 +7,12 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Dosis:wght@500;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=DM+Sans:wght@400;700&family=Dancing+Script&family=Dosis:wght@500;700&family=Epilogue:wght@800&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Montserrat:wght@600&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Palanquin:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../assets/MC.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/Cadastro.css">
     
     <title>Administração MetaChurch</title>
@@ -74,24 +76,51 @@
                     </div>
 
                     <div class="checkbox-wrapper">
+                        
+                        <div class="checkbox">
+    
+                            <input 
+                                type="checkbox" 
+                                name="dir"
+                                id="event-dir"
+                            />
+                            <label 
+                                for="event-dir">
+                                Membro da direção
+                            </label>
+    
+                        </div>
 
-                        <input 
-                            type="checkbox" 
-                            name="admin"
-                            id="event-admin"
-                        />
-                        <label 
-                            for="event-admin">
-                            Usuário administrador
-                        </label>
+                        <div class="checkbox">
+    
+                            <input 
+                                type="checkbox" 
+                                name="admin"
+                                id="event-admin"
+                            />
+                            <label 
+                                for="event-admin">
+                                Usuário admin
+                            </label>
+    
+                        </div>
 
                     </div>
                     
                 </div>
                 
                 <div class="buttons">
-                    <button type="submit" name="enviar">Cadastrar</button>
-                    <a href="Index.php"><button type="button">Cancelar</button></a>
+
+                    <a href="Index.php">
+                        <button type="button">
+                            Cancelar
+                        </button>
+                    </a>
+
+                    <button type="submit" name="enviar">
+                        Cadastrar
+                    </button>
+
                 </div>
 
             </fieldset> 

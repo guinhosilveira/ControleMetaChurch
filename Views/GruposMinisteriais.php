@@ -7,29 +7,52 @@ include '../Back-End/Conecta.php';
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=DM+Sans:wght@400;700&family=Dancing+Script&family=Dosis:wght@500;700&family=Epilogue:wght@800&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&family=Montserrat:wght@600&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&family=Palanquin:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="shortcut icon" href="../assets/MC.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/Tabelas.css">
     <link rel="stylesheet" href="../CSS/GruposMinisteriais.css">
 
     <title>Ministérios</title>
 </head>
 <body>
-    <header>
 
-        <a href="../Views/Agenda.php">Agenda</a>
-        <a href="../Views/Membros.php">Membros</a>
-        <a href="../Views/GruposMinisteriais.php">Ministérios</a>
+    <nav>
 
-    </header>
+        <ul>
+            <li><a href="../Views/Agenda.php">Agenda</a></li>
+            <li><a href="../Views/Membros.php">Membros</a></li>
+            <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
+        </ul>
+    
+    </nav>
 
     <main>
     
-        <h1>
 
-            Ministérios MetaChurch
+        <div class="title-wrapper">
 
-        </h1>
+            <h1>
+
+                Ministérios MetaChurch
+
+            </h1>
+
+            <button class="btDownload">
+                Baixar .XLS
+                <img 
+                    src="../assets/download.svg" 
+                    alt="Flecha apontando para baixo indicando possível download"
+                />
+            </button>
+
+        </div>
 
         <table>
 
@@ -87,12 +110,16 @@ include '../Back-End/Conecta.php';
             session_start();
 
             if (isset($_SESSION['adm'])) {
+
+                echo '<div class="button">';
                 
-                echo "<form action='CadastroMinisterial.php' method='POST'>";
+                    echo "<form action='CadastroMinisterial.php' method='POST'>";
 
-                    echo "<button class='butCad' type='submit'>Cadastrar Ministério</button>";
+                        echo "<button class='butCad' type='submit'>Cadastrar Ministério</button>";
 
-                echo "</form>";
+                    echo "</form>";
+
+                echo '</div>';
 
             }
 
@@ -110,5 +137,6 @@ include '../Back-End/Conecta.php';
         </div>
 
     </footer>
+
 </body>
 </html>

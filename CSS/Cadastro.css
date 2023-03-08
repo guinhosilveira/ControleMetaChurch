@@ -18,6 +18,20 @@ body {
     font-size: 1.6rem;
 }
 
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
 nav {
     height: 22vh;
     padding-right: 10%;
@@ -27,7 +41,7 @@ nav {
     justify-content: end;
 
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
 }
 
 ul {
@@ -39,6 +53,7 @@ ul {
 
 nav ul li a {
     text-decoration: none;
+    text-shadow: .1rem .1rem #000;
     color: #787878;
 }
 
@@ -82,7 +97,7 @@ fieldset legend {
     padding: 3% 5%;
     
     font-family: 'Archivo', sans-serif;
-    font-size: 2.6rem;
+    font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
     line-height: 3.4rem;
     
     border-radius: 1rem 1rem 0 0;
@@ -91,12 +106,26 @@ fieldset legend {
 
 .input-wrapper {
     width: 100%;
+    padding: 0 5%;
 
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
 
-    padding: 0 5%;
+.input-wrapper label { 
+    font-size: clamp(.8rem, 1rem + 1vw, 1.8rem);
+    line-height: 2rem;
+    color: #5F5E5E;
+}
+
+.input-wrapper label span { 
+    font-size: clamp(.8rem, .8rem + 1vw, 1.4rem);
+    color: #A3A0A0;
+}
+
+.input-wrapper label span:hover { 
+    color: #838383;
 }
 
 .input-wrapper input { 
@@ -107,7 +136,7 @@ fieldset legend {
     border: 1px solid #A3A0A0;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: clamp(.6rem, .8rem + 1vw, 1.4rem);
     color: #A3A0A0;
 }
 
@@ -115,39 +144,32 @@ fieldset legend {
     border: 2px solid #ff0000;
 }
 
-.input-wrapper label { 
-    font-size: 1.8rem;
-    line-height: 2rem;
-    color: #5F5E5E;
-}
-
-.input-wrapper label span { 
-    font-size: 1.4rem;
-    color: #A3A0A0;
-}
-
-.input-wrapper label span:hover { 
-    color: #838383;
-}
-
 .checkbox-wrapper {
     width: 100%;
-    padding-left: 5%;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.checkbox {
+    width: 100%;
 
     position: relative;
 }
 
-.checkbox-wrapper label {
+.checkbox label {
     margin: 0;
 
     display: flex;
     align-items: center;
     gap: 1.6rem;
 
-    font-size: 1.8rem;
+    font-size: clamp(.8rem, 1rem + 1vw, 1.8rem);
 }
 
-.checkbox-wrapper input {
+.checkbox input {
     width: 2.4rem;
     height: 2.4rem;
 
@@ -158,10 +180,11 @@ fieldset legend {
     opacity: 0;
 }
 
-.checkbox-wrapper label::before {
+.checkbox label::before {
     content: '';
-    width: 2.4rem;
-    height: 2.4rem;
+    min-width: 1.6rem;
+    width: clamp(1.6rem, 1.6rem + 1vw, 2.4rem);
+    height: clamp(1.6rem, 1.6rem + 1vw, 2.4rem);
 
     display: block;
 
@@ -169,7 +192,7 @@ fieldset legend {
     border-radius: 8px;
 }
 
-.checkbox-wrapper input:checked + label::before {
+.checkbox input:checked + label::before {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1119_20)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1119_20'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
 }
 
@@ -179,7 +202,7 @@ fieldset legend {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 2.5rem;
 
     background-color: #EAE8E8;
     border-radius: 0 0 1rem 1rem;
@@ -188,7 +211,7 @@ fieldset legend {
 
 .buttons a {
     text-decoration: none;
-    width: 40%;
+    width: 35%;
     height: 50%;
 }
 
@@ -198,7 +221,7 @@ fieldset legend {
 }
 
 .buttons button {
-    width: 40%;
+    width: 35%;
     height: 50%;
 
     background-color: #C4C1C1;
@@ -206,7 +229,7 @@ fieldset legend {
     border-radius: 1rem;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 
     transition-duration: 300ms;
     cursor: pointer;
@@ -219,7 +242,7 @@ fieldset legend {
 @keyframes fromTop{
     from{
         opacity: 0;
-        transform: translateY(+4rem);
+        transform: translateY(+3rem);
     }
 
     to{
@@ -231,5 +254,9 @@ fieldset legend {
 @media (max-width: 768px) {
     form {
         width: 70%;
+    }
+
+    .checkbox-wrapper {
+        gap: 1rem;
     }
 }

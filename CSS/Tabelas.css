@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    height: 100%;
+}
+
+body {    
+    min-height: 100%;
+    position: relative;
+
+    background-image: url(../assets/Fundo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
+body, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav, footer .infos, a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    color: #787878;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: .1rem .1rem #000;
+}
+
+button {
+    height: 5rem;
+
+    background-color: #C4C1C1;
+    border-radius: .5rem;
+    border: none;
+
+    font-size: clamp(.6rem, .6rem + 1vw, 1.5rem);
+
+    cursor: pointer;
+    transition: 300ms;
+}
+
+button:hover {
+    opacity: .7;
+}
+
+
+
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    gap: 2.5rem;
+}
+
+a:hover {
+    color: #646363;
+}
+
+main {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    
+    animation: fromTop 1s backwards;
+    animation-delay: .4s;
+}
+
+.title-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 5.5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    background-color: #EAE8E8;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #D8D8DB;
+}
+
+h1 {
+    width: fit-content;
+
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1.6rem, 1.4rem + 2vw, 4.5rem);
+    font-weight: normal;
+
+    animation: scaleChange 1s backwards;
+}
+
+.btDownload {
+    width: 15%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+
+    border: none;
+    border-collapse: collapse;
+}
+
+thead {
+    width: 100%;
+
+    background-color: #EAE8E8;
+    border-bottom: 1px solid #D8D8DB;
+    
+    font-size: clamp(.8rem, .8rem + 1vw, 1.6rem);
+    color: #000;
+}
+
+tbody {
+    width: 100%;
+
+    background-color:  #F0F0F4;;
+    
+    font-size: clamp(.5rem, .5rem + 1vw, 1.5rem);
+}
+
+tr {
+    width: 100%;
+    padding: 1.5% 0;
+
+    display: flex;
+    align-items: center;
+    
+    border-bottom: 1px solid #D8D8DB;
+}
+
+th {
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    width: 100%;
+    padding: .5rem 0;
+
+    display: flex;
+    justify-content: center;
+    
+    text-align: center;
+    word-break: break-word;
+
+    animation-name: scaleChange;
+    animation-duration: 600ms;
+}
+
+.button {
+    width: 90%;
+    margin: 0 auto 14%;
+    padding: 2% 5.5%;
+
+    background-color: #EAE8E8;
+    border-radius: 0 0 1rem 1rem;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+.butCad {
+    width: 22%;
+}
+
+footer {
+    height: 22vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(+3rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleChange {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+

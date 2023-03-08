@@ -17,6 +17,20 @@ body{
     font-size: 1.6rem;
 }
 
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
 body, button {
     font-family: 'Poppins', sans-serif;
 }
@@ -30,7 +44,7 @@ nav {
     justify-content: end;
 
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
 }
 
 ul {
@@ -42,6 +56,7 @@ ul {
 
 nav ul li a {
     text-decoration: none;
+    text-shadow: .1rem .1rem #000;
     color: #787878;
 }
 
@@ -83,7 +98,7 @@ fieldset {
 
 fieldset legend {
     font-family: 'Archivo', sans-serif;
-    font-size: 2.6rem;
+    font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
     line-height: 3.4rem;
 
     animation: fromLeft 1.2s backwards;
@@ -102,13 +117,13 @@ fieldset legend {
 }
 
 .input-wrapper label {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 1.2rem + 1vw, 1.8rem);
     line-height: 2rem;
     color: #5F5E5E;
 }
 
 .input-wrapper label span {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
     color: #A3A0A0;
 }
 
@@ -123,7 +138,7 @@ fieldset legend {
     border: 1px solid #A3A0A0;
     border-radius: 1rem;
     
-    font-size: 1.5rem;
+    font-size: clamp(.6rem, .8rem + 1vw, 1.4rem);
     color: #A3A0A0;
 
     animation: fromLeft 1s backwards;
@@ -169,7 +184,7 @@ fieldset legend {
     border-radius: 8px;
     border: none;
     
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
     
     cursor: pointer;
     animation: fromRight .8s backwards;
@@ -217,7 +232,7 @@ button:hover {
 @keyframes fromLeft{
     from{
         opacity: 0;
-        transform: translateX(-30%);
+        transform: translateX(-3rem);
     }
 
     to{
@@ -229,7 +244,7 @@ button:hover {
 @keyframes fromRight{
     from{
         opacity: 0;
-        transform: translateX(+200%);
+        transform: translateX(+50rem);
     }
 
     to{
@@ -241,14 +256,6 @@ button:hover {
 @media (max-width: 768px) {
     .input-wrapper input {
         width: 90%;
-    }
-
-    .input-wrapper label {
-        font-size: 1.4rem;
-    }
-
-    .input-wrapper label span {
-        font-size: 1.2rem;
     }
 
     .fones input#fone1{
