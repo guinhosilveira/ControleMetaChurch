@@ -1,21 +1,15 @@
 * MINISTÉRIOS *
 - líder do ministério incluir usuários no ministério;
-- Fazer tela de cadastro e mostragem de publicações dentro de cada ministério (só o Líder poderá cadastrar publicações). 
- 
-* USUÁRIOS *
-- Cadastro de Usuário (checar se é administrador, membro da diretoria ou usuário padrão) - FEITO.
 
 * HOME *
 - Concluir home adicionando conteúdos vindo do banco de dados.
 
-* TABELAS *
-- Download das tabelas. 
-
-* CSS *
-- Clamp nos font-size.
-
 * HTML *
-- Alterar nome label/id.
 - Alterar nome div.
 
+* CADASTRO OCASION / NAV *
+- Animação
+
+* BACK-END *
+- usar apenas REQUEST. 
 

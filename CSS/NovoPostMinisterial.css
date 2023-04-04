@@ -8,13 +8,19 @@
     font-size: 62.5%;
 }
 
-body {
+html {
+    height: 100%;
+}
+
+body {    
+    min-height: 100%;
+    position: relative;
+
     background-image: url(../assets/Fundo.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
-    font-family: 'Poppins', sans-serif;
+    
     font-size: 1.6rem;
 }
 
@@ -31,6 +37,23 @@ body::-webkit-scrollbar-thumb {
     border-radius: 2rem;
     border: 3px solid #777474;
 }
+
+body, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav, footer .infos, a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    color: #787878;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: .1rem .1rem #000;
+}
+
+
 
 nav {
     width: 80%;
@@ -70,6 +93,17 @@ nav ul li a:hover {
     color: #646363;
 }
 
+main {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    
+    animation: fromTop 1s backwards;
+    animation-delay: .4s;
+}
+
 form {
     width: 55%;
     margin: auto;
@@ -105,6 +139,8 @@ form fieldset {
 h1, fieldset legend {
     font-family: 'Archivo', sans-serif;
     line-height: 3.4rem;
+
+    animation: scaleChange 1s backwards;
 }
 
 h1 {
@@ -123,18 +159,18 @@ fieldset legend {
     font-weight: normal;
 }
 
-.input-wrapper {
+.input-wrapper,
+.ta-wrapper {
     width: 100%;
     padding: 0 5%;
 
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-
 }
 
 .input-wrapper label,
-.select-wrapper label { 
+.ta-wrapper label { 
     font-size: clamp(.8rem, 1rem + 1vw, 1.8rem);
     line-height: 2rem;
     color: #5F5E5E;
@@ -149,13 +185,11 @@ fieldset legend {
     color: #838383;
 }
 
-.input-wrapper input { 
+.input-wrapper input,
+.ta-wrapper textarea {
     height: 5vh;
     padding: 0 2%;
-}
 
-.input-wrapper input,
-.select-wrapper select {
     border-radius: 6px;
     border: 1px solid #A3A0A0;
 
@@ -164,26 +198,13 @@ fieldset legend {
     color: #A3A0A0;
 }
 
-.input-wrapper input:invalid { 
+.ta-wrapper textarea {
+    padding: 1% 2%;
+}
+
+.input-wrapper input:invalid,
+.ta-wrapper textarea:invalid { 
     border: 2px solid #ff0000;
-}
-
-.select-wrapper {
-    width: 100%;
-    padding: 0 5%;
-
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.select-wrapper label {
-    width: 10rem;
-}
-
-.select-wrapper select{
-    width: 100%;
-    padding: 1.4% 2%;
 }
 
 .buttons {
@@ -229,26 +250,58 @@ fieldset legend {
     transform: scale(1.1);
 }
 
-@keyframes fromLeft{
+footer {
+    height: 22vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+}
+
+@keyframes fromTop{
     from{
         opacity: 0;
-        transform: translateX(-3rem);
+        transform: translateY(+3rem);
     }
 
     to{
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-@keyframes fromRight{
+@keyframes scaleChange {
     from{
         opacity: 0;
-        transform: translateX(+50rem);
+        transform: scale(0);
     }
 
     to{
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
     }
 }
+
+@media (max-width: 850px) {
+    main {
+        gap: 3rem;
+    }
+}
+
+/* @media (max-width: 650px) { 
+    .cards-wrapper {
+        margin-bottom: 35%;
+    }
+}
+
+@media (max-width: 450px) { 
+    .cards-wrapper {
+        margin-bottom: 50%;
+    }
+} */

@@ -1,11 +1,11 @@
 @media (max-width: 1094px) {
-    .btDownload {
+    .title-wrapper form {
         width: 22%;
     }
 }
 
 @media (max-width: 850px) {
-    .btDownload {
+    .title-wrapper form {
         width: 28%;
     }
 
@@ -26,7 +26,11 @@
 }
 
 @media (max-width:450px) {
-    .btDownload {
+    .title-wrapper h1 {
+        width: 15rem;
+    }
+
+    .title-wrapper form .btDownload {
         padding: .3rem;
 
         gap: .5rem;

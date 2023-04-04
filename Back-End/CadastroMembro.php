@@ -28,9 +28,9 @@ if (isset($_REQUEST['enviar'])) {
     if (mysqli_num_rows($volta) > 0) {
 
         echo "<script>
-        alert('Telefone já cadastrado!');
-        window.location.href = '../Views/Index.php';
-        </script>";
+                alert('Telefone já cadastrado!');
+                window.location.href = '../Views/CadastroMembro.php';
+              </script>";
 
     } else {
         

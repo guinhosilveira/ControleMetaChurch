@@ -23,12 +23,25 @@ include '../Back-End/Protetor.php';
     
     <nav>
 
+        <a href="./Index.php">
+
+            <img 
+                src="../assets/MC.png" 
+                alt="Logo da igreja"
+            />
+
+        </a>
+
         <ul>
+            
+            <li><a href="../Views/Home.php">Home</a></li>
             <li><a href="../Views/Agenda.php">Agenda</a></li>
             <li><a href="../Views/Membros.php">Membros</a></li>
             <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
-        </ul>
-    
+            <li><a href="../Back-End/Logout.php">Logout</a></li>
+
+        </ul>  
+
     </nav>
 
     <main>
@@ -52,13 +65,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
         
                         <label 
-                            for="nome">
+                            for="event-name">
                             Nome Do Ministério:
                         </label>
                         <input 
                             type="text" 
                             name="nomemin" 
-                            id="nome" 
+                            id="event-name" 
                             required
                         />
         
@@ -67,21 +80,22 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
         
                         <label 
-                            for="fone">
+                            for="event-fone1">
                             Telefone do líder:
                         </label>
-                        <div class="fones">
+                        <div class="fones-wrapper">
                             <input 
                                 type="tel" 
                                 name="fone1" 
-                                id="fone1" 
+                                id="event-fone1"
+                                class="fone1" 
                                 maxlength="2"
                                 required
                             />
                             <input  
                                 type="tel" 
                                 name="fone2" 
-                                id="fone2" 
+                                class="fone2" 
                                 maxlength="9" 
                                 required 
                             />
@@ -92,13 +106,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
         
                         <label 
-                            for="senha">
+                            for="event-password">
                             Senha de acesso ao ministério:
                         </label>
                         <input 
                             type="password" 
                             name="senha" 
-                            id="senha" 
+                            id="event-password" 
                             required
                         />
         
@@ -107,13 +121,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
         
                         <label 
-                            for="confsenha">
+                            for="event-confpw">
                             Confirmar senha:
                         </label>
                         <input 
                             type="password" 
                             name="confsenha" 
-                            id="confsenha" 
+                            id="event-confpw" 
                             required
                         />
         

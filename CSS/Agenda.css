@@ -56,12 +56,21 @@ a {
 }
 
 nav {
+    width: 80%;
     height: 22vh;
-    padding-right: 10%;
+    margin: 0 auto;
     
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
+}
+
+nav a {
+    width: 10%;
+}
+
+nav a img {
+    width: 100%;
 }
 
 ul {
@@ -171,8 +180,10 @@ div.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
     height: 25rem;
     
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     
     position: relative;
     z-index: 3;

@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const butCloseTwo = document.querySelector('.modal #butCloseSecond');
     const firstSpan   = document.querySelector('.firstSpan');
     const secondSpan  = document.querySelector('.secondSpan');
+    const thirdSpan   = document.querySelector('.thirdSpan');
+    const fourthSpan  = document.querySelector('.fourthSpan');
     let textInP       = (p.textContent).trim();
 
     let calendar = new FullCalendar.Calendar(calendarEl, {
@@ -73,7 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             hideOrShowContainer()
             secondModal.classList.remove('hide');
-            firstSpan.textContent = ('Event: ' + info.event.title);
+            firstSpan.textContent  = ('Evento: ' + info.event.title);
+            secondSpan.textContent = ('Início: ' + info.event.start);
+            thirdSpan.textContent = ('Fim: ' + info.event.end);
+            typeOfMeeting(info.event.allow);
+            console.log(info.event.allow);
 
         },
 
@@ -137,6 +143,29 @@ document.addEventListener('DOMContentLoaded', function () {
         let day   = String(date).substring(8, 10);
 
         return `${day}/${month}/${year}`;        
+    }
+
+    function typeOfMeeting(type) {
+        switch (type) {
+            case '1':
+                fourthSpan.textContent = ('Tipo de encontro: Público');
+                break;
+        
+            case '2':
+                fourthSpan.textContent = ('Tipo de encontro: Ensaio');
+                break;
+        
+            case '3':
+                fourthSpan.textContent = ('Tipo de encontro: Reunião');
+                break;
+        
+            case '4':
+                fourthSpan.textContent = ('Tipo de encontro: Escolas');
+                break;
+        
+            default:
+                break;
+        }
     }
 
 });

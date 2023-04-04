@@ -29,12 +29,25 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
 
     <nav>
 
+        <a href="./Index.php">
+
+            <img 
+                src="../assets/MC.png" 
+                alt="Logo da igreja"
+            />
+
+        </a>
+
         <ul>
+            
+            <li><a href="../Views/Home.php">Home</a></li>
             <li><a href="../Views/Agenda.php">Agenda</a></li>
             <li><a href="../Views/Membros.php">Membros</a></li>
             <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
-        </ul>
-    
+            <li><a href="../Back-End/Logout.php">Logout</a></li>
+
+        </ul>   
+
     </nav>
     
     <main>
@@ -47,13 +60,17 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
     
             </h1>
 
-            <button class="btDownload">
-                Baixar .XLS
-                <img 
-                    src="../assets/download.svg" 
-                    alt="Flecha apontando para baixo indicando possível download"
-                />
-            </button>
+            <form action="../Back-End/GerarPlanilha.php" method="post">
+
+                <button class="btDownload" name="mem">
+                    Baixar .XLS
+                    <img 
+                        src="../assets/download.svg" 
+                        alt="Flecha apontando para baixo indicando possível download"
+                    />
+                </button>
+
+            </form>
 
         </div>
     
@@ -100,9 +117,9 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
             
         <?php
                             
-            if (isset($_SESSION['adm'])) {
-                    
-                echo '<div class="button">';
+            echo '<div class="button">';
+            
+                if (isset($_SESSION['adm'])) {        
 
                     echo '<form action="./CadastroMembro.php" method="POST">';
 
@@ -110,8 +127,9 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
 
                     echo '</form>';
                         
-                echo '</div>';
-            }
+                }
+
+            echo '</div>';
 
         ?>
 

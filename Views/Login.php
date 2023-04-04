@@ -40,13 +40,13 @@
                     <div class="input-wrapper">
 
                         <label 
-                            for="idEmail">
+                            for="event-email">
                             Email:
                         </label>
                         <input 
                             type="email" 
                             name="email" 
-                            id="idEmail" 
+                            id="event-email" 
                             required
                         />
 
@@ -55,13 +55,13 @@
                     <div class="input-wrapper">
 
                         <label 
-                            for="idSenha">
+                            for="event-password">
                             Senha: 
                         </label>
                         <input 
                             type="password" 
                             name="senha" 
-                            id="idSenha" 
+                            id="event-password" 
                             required
                         />
 

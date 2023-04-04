@@ -1,3 +1,9 @@
+<?php
+
+include '../Back-End/Protetor.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -17,12 +23,22 @@
 
     <nav>
 
+        <a href="./Index.php">
+
+            <img 
+                src="../assets/MC.png" 
+                alt="Logo da igreja"
+            />
+
+        </a>
+
         <ul>
             
             <li><a href="../Views/Home.php">Home</a></li>
             <li><a href="../Views/Agenda.php">Agenda</a></li>
             <li><a href="../Views/Membros.php">Membros</a></li>
             <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
+            <li><a href="../Back-End/Logout.php">Logout</a></li>
 
         </ul>  
 
@@ -34,7 +50,7 @@
 
             <h1>
 
-                Minha Área:
+                Bem-vindo à sua área, <?= $_SESSION['nome'];?>
 
             </h1>
 

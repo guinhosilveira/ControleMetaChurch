@@ -36,15 +36,24 @@ body, button, input {
 }
 
 nav {
+    width: 80%;
     height: 22vh;
-    padding-right: 10%;
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+}
+
+nav a {
+    width: 10%;
+}
+
+nav a img {
+    width: 100%;
 }
 
 ul {
@@ -138,16 +147,16 @@ input:invalid {
     border: 1px solid red;
 }
 
-.fones {
+.fones-wrapper {
     display: flex;
     gap: 1%;
 }
 
-.fones input#fone1{
+.fones-wrapper input.fone1{
     width: 6%;
 }
 
-.fones input#fone2{
+.fones-wrapper input.fone2{
     width: 73%;
 }
 
@@ -216,11 +225,11 @@ button:hover {
         width: 90%;
     }
 
-    .fones input#fone1{
+    .fones-wrapper input.fone1{
         width: 15%;
     }
     
-    .fones input#fone2{
+    .fones-wrapper input.fone2{
         width: 74%;
     }
 

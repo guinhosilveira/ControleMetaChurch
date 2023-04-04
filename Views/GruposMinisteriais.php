@@ -2,6 +2,8 @@
 
 include '../Back-End/Conecta.php';
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +27,25 @@ include '../Back-End/Conecta.php';
 
     <nav>
 
+        <a href="./Index.php">
+
+            <img 
+                src="../assets/MC.png" 
+                alt="Logo da igreja"
+            />
+
+        </a>
+
         <ul>
+            
+            <li><a href="../Views/Home.php">Home</a></li>
             <li><a href="../Views/Agenda.php">Agenda</a></li>
             <li><a href="../Views/Membros.php">Membros</a></li>
             <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
-        </ul>
-    
+            <li><a href="../Back-End/Logout.php">Logout</a></li>
+
+        </ul>  
+
     </nav>
 
     <main>
@@ -44,13 +59,17 @@ include '../Back-End/Conecta.php';
 
             </h1>
 
-            <button class="btDownload">
-                Baixar .XLS
-                <img 
-                    src="../assets/download.svg" 
-                    alt="Flecha apontando para baixo indicando possível download"
-                />
-            </button>
+            <form action="../Back-End/GerarPlanilha.php" method="post">
+
+                <button class="btDownload" name="min">
+                    Baixar .XLS
+                    <img 
+                        src="../assets/download.svg" 
+                        alt="Flecha apontando para baixo indicando possível download"
+                    />
+                </button>
+
+            </form>
 
         </div>
 
@@ -109,9 +128,9 @@ include '../Back-End/Conecta.php';
             
             session_start();
 
-            if (isset($_SESSION['adm'])) {
+            echo '<div class="button">';
 
-                echo '<div class="button">';
+                if (isset($_SESSION['adm'])) {
                 
                     echo "<form action='CadastroMinisterial.php' method='POST'>";
 
@@ -119,9 +138,9 @@ include '../Back-End/Conecta.php';
 
                     echo "</form>";
 
-                echo '</div>';
+                }
 
-            }
+            echo '</div>';
 
         ?>
 

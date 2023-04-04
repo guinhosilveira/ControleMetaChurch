@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    height: 100%;
+}
+
+body {    
+    min-height: 100%;
+    position: relative;
+
+    background-image: url(../assets/Fundo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #777474;
+    border-radius: 2rem;
+    border: 3px solid #777474;
+}
+
+body, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav, footer .infos, a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem);
+    color: #787878;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: .1rem .1rem #000;
+}
+
+.butAct,
+.validation-wrapper.hide,
+.modal-event-wrapper.hide {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+
+nav {
+    height: 22vh;
+    padding-right: 10%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    gap: 2.5rem;
+}
+
+a:hover {
+    color: #646363;
+}
+
+main {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.modal {
+    width: 30%;
+    height: 30rem;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+
+    background-color: #D8D8DB;
+    border-radius: 1rem;
+    border: 1px solid #EAE8E8;
+    box-shadow: 1rem 1rem 4rem 3px rgb(0 0 0 / 50%);
+
+    text-align: center;
+}
+
+.validation-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    animation-name: scaleChange;
+    animation-fill-mode: backwards;
+    animation-delay: 700ms;
+    animation-duration: 500ms;
+}
+
+.validation-wrapper .modal .input-wrapper label {
+    width: 90%;
+    margin-left: 0.5rem;
+
+    display: inline-flex;
+
+    text-align: left;
+}
+
+.validation-wrapper .modal .input-wrapper input {
+    width: 90%;
+    height: 4vh;
+    padding: 1%;
+
+    background-color: #E2DEDE;
+    border-radius: 1rem;
+    border: 1px solid #A3A0A0;
+
+    color: #A3A0A0;
+}
+
+.validation-wrapper .modal button {
+    width: 20%;
+    height: 4vh;
+    margin-top: 2rem;
+}
+
+.modal-event-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-event-wrapper .modal { 
+    animation-name: fromTop;
+    animation-duration: 600ms;
+    animation-fill-mode: backwards;
+}
+
+.modal-event-wrapper .modal a {
+    width: 50%;
+    height: 4vh;
+    margin: 0 auto;
+}
+
+.modal-event-wrapper .modal a button {
+    width: 100%;
+}
+
+.modal-event-wrapper .modal button#butClose {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.title-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 5.5%;
+
+    display: flex;
+    border-bottom: 1px solid #D8D8DB;
+}
+
+h1 {
+    width: fit-content;
+
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1.6rem, 1.4rem + 2vw, 4.5rem);
+    font-weight: normal;
+    color: #EAE8E8;
+
+    animation: scaleChange 1s backwards;
+}
+
+.post-wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    animation-name: fromTop;
+    animation-duration: 1s;
+}
+
+.post {
+    width: 90%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-areas: 'A B';
+    grid-template-columns: 80% 20%;
+}
+
+.post .side-A,
+.post .side-B {
+    margin: auto;
+
+    display: grid;
+    justify-items: center;
+
+    text-align: center;
+}
+
+.post .side-A {
+    width: 100%;
+
+    grid-area: A;
+
+    color: #EAE8E8;
+}
+
+.post .side-A h2 {
+    margin-bottom: 2%;
+
+    font-size: clamp(1.8rem, 1.6rem + 2vw, 2.4rem);
+}
+
+.post .side-A p {
+    margin-bottom: 5%;
+
+    font-size: clamp(1rem, .8rem + 2vw, 1.6rem);
+    word-break: break-all;
+}
+
+.post .side-A iframe {
+    width: clamp(20rem, 15rem + 30vw, 76rem);
+    height: clamp(12rem, 8rem + 30vh, 51.5rem);
+    margin-bottom: 2%;
+}
+
+.post .side-B {
+    grid-area: B;
+}
+
+.events-wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 30% 30% 30%;
+    gap: 5rem;
+
+    animation-name: fromTop;
+    animation-duration: 1s;
+}
+
+.card0, .card1, .card2 {
+    width: 100%;
+    height: 40rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    
+    position: relative;
+    background-color: #C4C1C1;
+    border-radius: 1rem;
+
+    cursor: pointer;
+}
+
+.card0 img,
+.card1 img,
+.card2 img {
+    width: 33rem;
+
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.card0 h3,
+.card1 h3,
+.card2 h3 {
+    cursor: pointer;
+}
+
+.card0 .data, 
+.card1 .data, 
+.card2 .data {
+    display: flex;
+    gap: 2rem;
+
+    cursor: pointer;
+}
+
+.button {
+    width: 60%;
+    margin: 0 auto 10%;
+
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.button button {
+    width: clamp(12rem, 12rem + 5vw, 20rem);
+}
+
+button {
+    height: 5rem;
+    padding: 0 1%;
+
+    background-color: #C4C1C1;
+    border-radius: 1rem;
+    border: none;
+
+    font-size: clamp(.6rem, .6rem + 1vw, 1.5rem);
+
+    cursor: pointer;
+    transition-duration: 400ms;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    height: 22vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(+3rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleChange {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 850px) {
+    main {
+        gap: 3rem;
+    }
+}
+
+/* @media (max-width: 650px) { 
+    .cards-wrapper {
+        margin-bottom: 35%;
+    }
+}
+
+@media (max-width: 450px) { 
+    .cards-wrapper {
+        margin-bottom: 50%;
+    }
+} */

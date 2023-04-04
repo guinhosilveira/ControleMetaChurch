@@ -34,7 +34,7 @@
             
             session_start();
            
-            if (isset($_SESSION['id'])) {
+            if (isset($_SESSION['nm_user'])) {
 
                 echo '<button type="submit" formaction="Home.php">Página Inicial</button>';
                 

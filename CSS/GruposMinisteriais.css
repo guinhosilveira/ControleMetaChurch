@@ -3,7 +3,7 @@ td button {
 }
 
 @media (max-width: 1094px) {
-    .btDownload {
+    .title-wrapper form {
         width: 22%;
     }
 
@@ -13,7 +13,7 @@ td button {
 }
 
 @media (max-width: 850px) {
-    .btDownload {
+    .title-wrapper form {
         width: 28%;
     }
 
@@ -33,7 +33,7 @@ td button {
 }
 
 @media (max-width:450px) {
-    .btDownload {
+    .title-wrapper form .btDownload {
         padding: .3rem;
 
         gap: .5rem;

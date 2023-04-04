@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
     
 }
 
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['nm_user'])) {
 
     echo "<script>
             alert ('Você não pode acessar essa página pois não está logado.');

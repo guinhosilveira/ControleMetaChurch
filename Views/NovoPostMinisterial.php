@@ -3,7 +3,7 @@
 include '../Back-End/Conecta.php';
 include '../Back-End/Protetor.php';
 
-$sql   = "SELECT * FROM tb_ministerios";
+$sql   = "SELECT * FROM tb_ministerios WHERE id_ministerio = '{$_SESSION['ministerio']}'";
 $volta = mysqli_query($conexao, $sql);
 $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
 
@@ -20,7 +20,8 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="../assets/MC.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/CadastroOcasion.css">
+    <link rel="stylesheet" href="../CSS/NovoPostMinisterial.css">
+    <script src="../JS/NovoPost.js" defer></script>
 
     <title>Cadastro de Evento</title>
 </head>
@@ -51,7 +52,7 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
 
     <main>
         
-        <form action="../Back-End/CadastroOcasion.php" method="POST">
+        <form action="../Back-End/NovoPostMinisterial.php" method="POST">
 
             <fieldset>
 
@@ -61,13 +62,13 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
 
                         <h1>
 
-                            Cadastro de evento
+                            Compartilhe com seu ministério!
 
                         </h1>
 
                         <legend>
         
-                            Informe os detalhes do evento!
+                            O que deseja comunicar?
         
                         </legend>
 
@@ -76,7 +77,7 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
                     <div class="input-wrapper">
 
                         <label for="event-name">
-                            Nome do Evento:
+                            Nome da Postagem:
                         </label>
                         <input 
                             type="text" 
@@ -87,70 +88,28 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
                 
                     </div>
 
-                    <div class="input-wrapper">
+                    <div class="ta-wrapper">
 
-                        <label for="event-start">
-                            Início do Evento:
+                        <label for="event-textarea">
+                            Mensagem:
                         </label>
-                        <input 
-                            type="datetime-local" 
-                            name="start" 
-                            id="event-start"
-                            required
-                        />
+                        <textarea 
+                            name="text" 
+                            id="event-textarea"
+                            required></textarea>
 
                     </div>
 
                     <div class="input-wrapper">
 
-                        <label for="event-end">
-                            Fim do Evento:
+                        <label for="event-video">
+                            Link do vídeo:
                         </label>
                         <input 
-                            type="datetime-local" 
-                            name="end" 
-                            id="event-end"
-                            required
+                            type="text" 
+                            name="video" 
+                            id="event-video"
                         />
-
-                    </div>
-
-                    <div class="select-wrapper">
-
-                        <label 
-                            for="event-mistry">
-                            Ministério:
-                        </label>
-                        <select name="ministerio" id="event-mistry">
-        
-                            <?php
-        
-                                foreach ($dados as $key => $value) {
-        
-                                    echo '<option value="'.$value['id_ministerio'].'">'.$value['nm_ministerio'].'</option>';
-        
-                                }
-        
-                            ?>
-                            
-                        </select>
-        
-                    </div>
-
-                    <div class="select-wrapper">
-
-                        <label 
-                            for="type-event">
-                            Tipo:    
-                        </label>
-                        <select name="tipoEvento" id="type-event">
-                            
-                            <option value="1">Público</option>
-                            <option value="2">Ensaio</option>
-                            <option value="3">Reunião</option>
-                            <option value="4">Escolas</option>
-                            
-                        </select>
 
                     </div>
                     
@@ -158,14 +117,14 @@ $dados = mysqli_fetch_all($volta, MYSQLI_ASSOC);
                 
                 <div class="buttons">
     
-                    <a href="Index.php">
+                    <a href="./Ministerio.php">
                         <button type="button">
                             Cancelar
                         </button>
                     </a>
     
                     <button type="submit" name="enviar">
-                        Confirmar Evento
+                        Confirmar postagem
                     </button>                
     
                 </div>

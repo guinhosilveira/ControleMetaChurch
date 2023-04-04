@@ -45,8 +45,9 @@ CREATE TABLE IF NOT EXISTS tb_lider (
 CREATE TABLE IF NOT EXISTS tb_agenda (
     id_agenda   INT AUTO_INCREMENT,
     nm_ocasion  VARCHAR(255) NOT NULL,
-    data_beggin DATETIME NOT NULL,
+    data_start DATETIME NOT NULL,
     data_end    DATETIME NOT NULL, 
+    type_data   INT NOT NULL, 
     color       VARCHAR(7),
     PRIMARY KEY(id_agenda)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;

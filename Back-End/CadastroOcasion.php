@@ -6,20 +6,42 @@ include 'Protetor.php';
 if (isset($_REQUEST['enviar'])) {
 
     $nm_evento = mysqli_real_escape_string($conexao, trim($_REQUEST['nome']));
-    $beggin    = mysqli_real_escape_string($conexao, trim($_REQUEST['beggin']));
+    $start    = mysqli_real_escape_string($conexao, trim($_REQUEST['start']));
     $end       = mysqli_real_escape_string($conexao, trim($_REQUEST['end']));
     $minist    = mysqli_real_escape_string($conexao, trim($_REQUEST['ministerio']));
+    $tipo      = mysqli_real_escape_string($conexao, trim($_REQUEST['tipoEvento']));
 
     $sql       = "SELECT * FROM tb_ministerios WHERE id_ministerio = '{$minist}'";
     $volta     = mysqli_query($conexao, $sql);
     $dados     = mysqli_fetch_assoc($volta);
 
-    $sql       = "INSERT INTO tb_agenda (nm_ocasion, data_beggin, data_end) 
-                  VALUES ('{$nm_evento}', '{$beggin}', '{$end}')";
+    switch ($tipo) {
+        case 1:
+            $color = '#008000';
+            break;
+        
+        case 2:
+            $color = '#FFA500';
+            break;
+        
+        case 3:
+            $color = '#FF0000';
+            break;
+        
+        case 4:
+            $color = '#800080';
+            break;
+        
+        default:
+            break;
+    }
+
+    $sql = "INSERT INTO tb_agenda (nm_ocasion, data_start, data_end, type_data, color) 
+            VALUES ('{$nm_evento}', '{$start}', '{$end}', '{$tipo}', '{$color}')";
 
     if (mysqli_query($conexao, $sql)) {
 
-        $sql    = "SELECT MAX(id_agenda) FROM tb_agenda";
+        $sql = "SELECT MAX(id_agenda) FROM tb_agenda";
 
         if ($volta  = mysqli_query($conexao, $sql)) {
             
@@ -28,9 +50,9 @@ if (isset($_REQUEST['enviar'])) {
                 echo $value;
             }
         
-            $sql    = "INSERT INTO tb_ocasion (id_data, id_lider)
-                       VALUES ('{$dados2['MAX(id_agenda)']}', '{$dados['id_lider']}')";
-            $volta  = mysqli_query($conexao, $sql);
+            $sql   = "INSERT INTO tb_ocasion (id_data, id_lider)
+                      VALUES ('{$dados2['MAX(id_agenda)']}', '{$dados['id_lider']}')";
+            $volta = mysqli_query($conexao, $sql);
 
             echo '<script> 
                     alert("Cadastro realizado");

@@ -14,14 +14,16 @@ foreach ($dados as $key => $value) {
     $id_agenda = $value['id_agenda'];
     $nm_evento = $value['nm_ocasion'];
     $color     = $value['color'];
-    $beggin    = $value['data_beggin'];
+    $start    = $value['data_start'];
     $end       = $value['data_end'];
+    $type      = $value['type_data'];
     
     $array[]   = ['id'    => $id_agenda,
                   'title' => $nm_evento,
                   'color' => $color,
-                  'start' => $beggin,
-                  'end'   => $end];
+                  'start' => $start,
+                  'end'   => $end,
+                  'allow' => $type];
 
 }
 

@@ -15,7 +15,8 @@ navigation menu:hover: #646363;
 legend: 'Archivo', sans-serif; 
 legend separator: #D8D8DB;
 
-inputs(color/border): #A3A0A0
+inputs(color/border): #A3A0A0;
+input (sem fundo): #E2DEDE;
 
 checkbox(border):  8px, #838383;
 
@@ -27,9 +28,13 @@ buttons: 'Poppins', sans-serif; #C4C1C1;
 .buttons: back: #EAE8E8;
 .buttons separator: #D8D8DB;
 
-modal: #838383;
+modal bg: #D8D8DB; 
+modal border: #EAE8E8;
+modal bs: 1rem 1rem 4rem 3px rgb(0 0 0 / 50%);
 
 textos: #D8E5F0;
+
+input[file]: #D8D8DB;
 
 ## Home
 

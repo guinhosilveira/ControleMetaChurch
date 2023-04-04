@@ -23,31 +23,26 @@ include '../Back-End/Protetor.php';
 <body>
     
     <nav>
+        
+        <a href="./Index.php">
+
+            <img 
+                src="../assets/MC.png" 
+                alt="Logo da igreja"
+            />
+
+        </a>
 
         <ul>
-
-            <li>
-                <a href="../Views/Agenda.php">
-                    Agenda
-                </a>
-            </li>
-
-            <li>
-                <a 
-                    href="../Views/Membros.php">
-                    Membros
-                </a>
-            </li>
-
-            <li>
-                <a 
-                    href="../Views/GruposMinisteriais.php"/>
-                    Ministérios
-                </a>
-            </li>
-
-        </ul>
             
+            <li><a href="../Views/Home.php">Home</a></li>
+            <li><a href="../Views/Agenda.php">Agenda</a></li>
+            <li><a href="../Views/Membros.php">Membros</a></li>
+            <li><a href="../Views/GruposMinisteriais.php">Ministérios</a></li>
+            <li><a href="../Back-End/Logout.php">Logout</a></li>
+
+        </ul>  
+
     </nav>
 
     <main>
@@ -71,13 +66,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
 
                         <label 
-                            for="nome">
+                            for="event-name">
                             Nome:
                         </label>
                         <input 
                             type="text" 
                             name="nome" 
-                            id="nome" 
+                            id="event-name" 
                             required
                         />
 
@@ -86,21 +81,22 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
 
                         <label 
-                            for="fone">
+                            for="event-fone1">
                             Telefone: <span>Primeiro o DDD depois o número</span>
                         </label>
-                        <div class="fones">
+                        <div class="fones-wrapper">
                             <input 
                                 type="tel" 
                                 name="fone1" 
-                                id="fone1" 
+                                id="event-fone1" 
+                                class="fone1"
                                 maxlength="2"
                                 required
                             />
                             <input  
                                 type="tel" 
                                 name="fone2" 
-                                id="fone2" 
+                                class="fone2" 
                                 maxlength="9" 
                                 required 
                             />
@@ -111,13 +107,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
 
                         <label 
-                            for="senha">
+                            for="event-password">
                             Senha:
                         </label>
                         <input 
                             type="password" 
                             name="senha" 
-                            id="senha" 
+                            id="event-password" 
                             required
                         />
 
@@ -126,13 +122,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
 
                         <label 
-                            for="confsenha">
+                            for="event-confpw">
                             Confirmar senha:
                         </label>
                         <input 
                             type="password" 
                             name="confsenha" 
-                            id="confsenha" 
+                            id="event-confpw" 
                             required
                         />
 
@@ -164,13 +160,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
     
                         <label 
-                            for="data">
+                            for="event-date">
                             Data de Nascimento:
                         </label>
                         <input 
                             type="date" 
                             name="data" 
-                            id="data"
+                            id="event-date"
                         />
     
                     </div>
@@ -178,13 +174,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
     
                         <label 
-                            for="ano">
+                            for="event-year">
                             Ano de Ingresso: <span>Informe o ano de ingresso na igreja</span>
                         </label>
                         <input 
                             type="tel" 
                             name="ano" 
-                            id="ano" 
+                            id="event-year" 
                             maxlength="4"
                         />
     
@@ -193,26 +189,26 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
                     
                         <label 
-                            for="email">
+                            for="event-email">
                             Email:
                         </label>
                         <input 
                             type="email" 
                             name="email" 
-                            id="email" 
+                            id="event-email" 
                         />
     
                     </div>
     
                     <div class="input-wrapper">
     
-                        <label for="cidade">
+                        <label for="event-city">
                             Cidade:
                         </label>
                         <input 
                             type="text" 
                             name="cidade" 
-                            id="cidade" 
+                            id="event-city" 
                         />
     
                     </div>
@@ -220,13 +216,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
     
                         <label 
-                            for="bairro">
+                            for="event-district">
                             Bairro:
                         </label>
                         <input 
                             type="text" 
                             name="bairro" 
-                            id="bairro" 
+                            id="event-district" 
                         />
     
                     </div>
@@ -234,13 +230,13 @@ include '../Back-End/Protetor.php';
                     <div class="input-wrapper">
     
                         <label 
-                            for="rua">
+                            for="event-street">
                             Rua e número: <span>(Botafogo, 531)</span>
                         </label>
                         <input 
                             type="text" 
                             name="rua" 
-                            id="rua" 
+                            id="event-street" 
                         />
     
                     </div>
